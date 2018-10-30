@@ -6,18 +6,20 @@
 			window.history.back()
 		}
 	</script>
+	<link rel="stylesheet" type="text/css" href="cssFiles/style.css">
 	<title>I-Fractr Save Fractal</title>
 </head>
 <body>
-	<div class="header">
-		<h5>I-Fractr</h5>
+	<header>
+		<h1>I-Fractr</h1>
 		<hr>
-	</div>
-	<span id="welcome"></span>
-	<div>
-		<button onclick="goBack()">PNG</button>
-		<button onclick="goBack()"> SVG</button>
-		<button onclick="goBack()">Both</button>
-	</div>
+	</header>
+	<main>
+		<div class="container__menu">
+			<button class="container__menu__button" onclick="goBack()">PNG</button>
+			<button class="container__menu__button" onclick="goBack()"> SVG</button>
+			<button class="container__menu__button" onclick="goBack()">Both</button>
+		</div>
+	</main>
 </body>
 </html>
