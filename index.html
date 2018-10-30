@@ -5,19 +5,27 @@
 	<link rel="stylesheet" type="text/css" href="cssFiles/style.css">
 </head>
 <body>
-	<div class="header">
-		<h3>I-Fractr</h5>
+	<header>
+		<h1>I-Fractr</h1>
 		<hr>
-	</div>
-	<form action="http://localhost:8085/index" method="GET">
-		<input type="text" name="username" placeholder="Username" required="required">
-		<input type="password" name="password" placeholder="Password" required="required">
-		<input type="submit" name="submit" value="Log In">
-	</form>
-	<div class="links">
-		<p>New here ? <a href="signUp.html">SignUp!</a></p>
-		<a href="editFractals.html">Guest mode</a>
-		<p>You will not be able to save your fractals!</p
-	</div>
+	</header>
+	<main class="container">
+        <h2 class="container--title">Welcome!</h2>
+        <form class="container__form" action="enterAsUser.html">
+            <input class="container__form--username" type="text" name="username" placeholder="Username" required="required">
+            <input class="container__form--password" type="password" name="password" placeholder="Password" required="required">
+            <input class="container__form--submit" type="submit" name="submit" value="Log In">
+        </form>
+        <div class="container--text">
+            <p>New here? Sign up or try it as a guest!</p>
+            <span>
+                <a class="container--text__button" href="signUp.html">SignUp!</a>
+                <a class="container--text__button" href="editFractals.html">Guest mode</a>
+            </span>
+            <p>But beware, you will not be able to save your fractals!</p>
+        </div>
+	</main>
+
+
 </body>
 </html>

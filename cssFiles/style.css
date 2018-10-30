@@ -1,67 +1,93 @@
-body{
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body {
 	background-color: #b64949;
-	color: white;
-}
-.links{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.links a{
-	font-size: 14px;
-	transition: font-size 1s;
-	display: inline-block;
-	text-decoration: none;
-}
-a:hover{
-	font-size: 16px;
-}
-a:visited{
-	color: gray;
-}
-input[type=text],input[type=password]{
-	width: 30%;
-	padding: 12px 20px;
-	margin: 6px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-input[type=submit] {
-	width: 30%;
-	background-color: #7f3333;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+	color: #fff;
+	font-family: 'Montserrat ExtraLight', sans-serif;
 }
 
-input[type=submit]:hover {
-	background-color: #702f2f;
+a:visited {
+	color: #fff;
 }
-form{
-	margin-top: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.header{
+
+
+header {
 	text-align: center;
 }
-.header hr {
+
+header hr {
 	border: 0;
 	height: 1px;
 	background-image: linear-gradient(to right, rgba(255,255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
 }
-@media screen and (max-width: 1080px){
+
+header h1 {
+	font-size: 6em;
+}
+
+
+.container h2 {
+	text-align: center;
+	margin-top: 2em;
+	font-size: 2em;
+}
+
+.container__form {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container__form--username, .container__form--password {
+	padding: 1em 1em;
+	margin: .2em 0;
+	border: 1px solid #ccc;
+	border-radius: .3em;
+	box-sizing: border-box;
+	font-size: 2em;
+}
+
+.container__form--submit {
+	background-color: #7f3333;
+	color: #fff;
+	padding: 1em 1em;
+	margin: .2em 0;
+	border: none;
+	border-radius: .3em;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.container__form--submit:hover {
+	background-color: #702f2f;
+}
+
+.container--text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 2em;
+}
+
+.container--text a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.container--text__button {
+	background-color: #49b6b6;
+	padding: .7em;
+	border-radius: .3em;
+}
+
+@media screen and (max-width: 1080px) {
 	input[type=text],input[type=password],input[type=submit]{
 		width: 50%;
 	}
 }
-@media screen and (max-width: 680px){
+@media screen and (max-width: 680px) {
 	input[type=text],input[type=password],input[type=submit]{
 		width: 70%;
 	}
