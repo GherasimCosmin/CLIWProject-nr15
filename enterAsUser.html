@@ -2,18 +2,21 @@
 <html>
 <head>
 	<title>I-Fractr</title>
+	<link rel="stylesheet" type="text/css" href="cssFiles/style.css">
 </head>
 <body>
-	<div class="header">
-		<h5>I-Fractr</h5>
+	<header>
+		<h1>I-Fractr</h1>
 		<hr>
-	</div>
-	<span id="welcome"></span>
-	<div>
-		<button onclick="location.href='editFractals.html'">New</button>
-		<button onclick="location.href='continue.html'">Continue</button>
-		<button onclick="location.href='download.html'">Download</button>
-		<button onclick="location.href='index.html'">Logout</button>
-	</div>
+	</header>
+	<main class="container">
+		<h2 class="container--title">Welcome back!</h2>
+		<div class="container__menu">
+			<button class="container__menu__button" onclick="location.href='editFractals.html'">New</button>
+			<button class="container__menu__button" onclick="location.href='continue.html'">Continue</button>
+			<button class="container__menu__button" onclick="location.href='download.html'">Download</button>
+			<button class="container__menu__button" onclick="location.href='index.html'">Logout</button>
+		</div>
+	</main>
 </body>
 </html>
