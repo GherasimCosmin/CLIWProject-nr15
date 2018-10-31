@@ -175,8 +175,12 @@ canvas {
 	border-radius: .2em .2em 0 0;
 	border-left: .02em solid #111d2e;
 	border-right: .02em solid #111d2e;
-}
 
+	transition: all 2.5s ease-in-out;
+}
+.container__menu__list.large, .container__menu__random.large, .container__menu__generate.large{
+	flex-grow: 3 !important ;
+}
 .container__menu__main--selected-option {
 	background-color: #9C3F3F;
 	font-size: 3em;
