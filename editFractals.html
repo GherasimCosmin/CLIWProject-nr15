@@ -2,48 +2,80 @@
 <html>
 <head>
 	<title>I-Fractr Guest Mode</title>
+	<link rel="stylesheet" type="text/css" href="cssFiles/style.css">
 </head>
 <body>
-	<div class="header">
-		<h5>I-Fractr</h5>
+	<header>
+		<h1>I-Fractr</h1>
 		<hr>
-	</div>
-	<button onclick="location.href='savefractals.html'">Save</button>
-	<canvas></canvas>
-	<div>
-		<div><p>List</p></div>
-		<div><p>Generate</p></div>
-		<div><p>Random</p></div>
-	</div>
-	<div>
-		<div id="list" class="list">
-			<div class="upload fractal"><p>upload fractal</p></div>
+	</header>
+	<main class="container">
+		<div class="container__menu">
+			<button class="container__menu--save-button" onclick="location.href='savefractals.html'">Save</button>
+			<canvas></canvas>
 		</div>
-		<div id="generate" class="generate">
-			<form>
-				<label>Iterations</label>
-				<input type="number" name="iterations" min="1" max="5">
-				<label>Angles</label>
-				<input type="number" name="angles" min="0" max="360">
-				<label>Axiom</label>
-				<input type="text" name="axiom">
-				<label>Rule1</label>
-				<input type="text" name="rule1">
-				<label>Rule2</label>
-				<input type="text" name="rule2">
-				<label>Rule3</label>
-				<input type="text" name="rule3">
-				<label>Rule4</label>
-				<input type="text" name="rule4">
-				<label>Rule5</label>
-				<input type="text" name="rule5">
-			</form>
-			<button>Generate</button>
+
+		<ul class="container__menu__main">
+			<li class="container__menu__list">List</li>
+			<li class="container__menu__generate container__menu__main--selected-option">Generate</li>
+			<li class="container__menu__random">Random</li>
+		</ul>
+
+		<div class="container__menu__swiper">
+			<div class="swiper__list">
+				<h2>Choose a fractal to edit:</h2>
+				<div class="container__fractal-list">
+					<div class="container__fractal-list--item"></div>
+					<div class="container__fractal-list--item"></div>
+					<div class="container__fractal-list--item"></div>
+					<div class="container__fractal-list--item"></div>
+					<div class="container__fractal-list--uploadFractal"><p>Upload fractal...</p></div>
+				</div>
+			</div>
+			<div class="swiper__generate">
+				<form class="swiper__generate--form">
+					<label>Iterations</label>
+					<div class="swiper__generate--special-label">
+						<input class="swiper__generate--number-input" type="number" name="iterations" min="1" max="5">
+						<button class="swiper__generate--turn-up-button">
+							<div class="arrow-up"></div>
+						</button>
+						<button class="swiper__generate--turn-down-button">
+							<div class="arrow-down"></div>
+						</button>
+					</div>
+					<label>Angles</label>
+					<div class="swiper__generate--special-label">
+						<input class="swiper__generate--number-input" type="number" name="angles" min="0" max="360">
+						<button class="swiper__generate--turn-up-button">
+							<div class="arrow-up"></div>
+						</button>
+						<button class="swiper__generate--turn-down-button">
+							<div class="arrow-down"></div>
+						</button>
+					</div>
+					<label>Axiom</label>
+					<input class="swiper__generate--text-input" type="text" name="axiom">
+					<label>Rule1</label>
+					<input class="swiper__generate--text-input" type="text" name="rule1">
+					<label>Rule2</label>
+					<input class="swiper__generate--text-input" type="text" name="rule2">
+					<label>Rule3</label>
+					<input class="swiper__generate--text-input" type="text" name="rule3">
+					<label>Rule4</label>
+					<input class="swiper__generate--text-input" type="text" name="rule4">
+					<label>Rule5</label>
+					<input class="swiper__generate--text-input" type="text" name="rule5">
+
+					<button class="swiper__generate--button">Generate</button>
+				</form>
+			</div>
+			<div class="swiper__random">
+				<p>If you re sure about getting a random, click bellow.</p>
+				<p>But beware!<br>In doing so you'll lose all of your current work! </p>
+				<button class="swiper__random--button">Randomize</button>
+			</div>
 		</div>
-		<div id="Random" class="Random">
-			<p>If you re sure about getting a random, click bellow.</p>
-			<p>But beware!<br>In doing so you'll lose all of your current work! </p>
-		</div>
-	</div>
+	</main>
 </body>
 </html>
