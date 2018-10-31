@@ -6,7 +6,7 @@ let position;
 window.onload = function(){
   position=slide[1];
   document.querySelector(".swiper__list").style.display="none";
-  document.querySelector(".swiper__generate").style.display="none";
+  document.querySelector(".swiper__generate").style.display="block";
   document.querySelector(".swiper__random").style.display="none";
 
   window.addEventListener('touchstart', function(event){
@@ -46,7 +46,7 @@ function left(){
   document.querySelector(".swiper__generate").style.display="none";
   document.querySelector(".swiper__random").style.display="none";
 
-  document.querySelector(classToBe).style.display='inline';
+  document.querySelector(classToBe).style.display='block';
 }
 
 function right(){
@@ -67,5 +67,5 @@ function right(){
   document.querySelector(".swiper__generate").style.display="none";
   document.querySelector(".swiper__random").style.display="none";
 
-  document.querySelector(classToBe).style.display='inline';
+  document.querySelector(classToBe).style.display='block';
   }
