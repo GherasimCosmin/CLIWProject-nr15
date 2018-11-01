@@ -2,12 +2,24 @@ let startX;
 let endX;
 let slide=[1,2,3];
 let position;
+
 var list = document.getElementsByClassName('container__menu__list')[0],
-flexBiglist = window.getComputedStyle(list).getPropertyValue('flex-grow');
+flexBigList = window.getComputedStyle(list).getPropertyValue('flex-grow'),
+fontSizeList = window.getComputedStyle(list).getPropertyValue('font-size'),
+backgroundColorList =window.getComputedStyle(list).getPropertyValue('background-color'),
+marginTopList =window.getComputedStyle(list).getPropertyValue('margin-top');
+
 var generate = document.getElementsByClassName('container__menu__generate')[0],
-flexBigGenerate = window.getComputedStyle(generate).getPropertyValue('flex-grow');
+flexBigGenerate = window.getComputedStyle(generate).getPropertyValue('flex-grow'),
+fontSizeGenerate = window.getComputedStyle(generate).getPropertyValue('font-size'),
+backgroundColorGenerate =window.getComputedStyle(generate).getPropertyValue('background-color'),
+marginTopGenerate =window.getComputedStyle(generate).getPropertyValue('margin-top');
+
 var random = document.getElementsByClassName('container__menu__random')[0],
-flexBigRandom = window.getComputedStyle(random).getPropertyValue('flex-grow');
+fontSizeRandom = window.getComputedStyle(random).getPropertyValue('font-size'),
+backgroundColorRandom =window.getComputedStyle(random).getPropertyValue('background-color'),
+flexBigRandom = window.getComputedStyle(random).getPropertyValue('flex-grow'),
+marginTopRandom =window.getComputedStyle(random).getPropertyValue('margin-top');
 
 
 window.onload = function(){
@@ -18,12 +30,13 @@ window.onload = function(){
 
   window.addEventListener('touchstart', function(event){
    startX = event.touches[0].clientX;   
- })
+ });
 
   window.addEventListener('touchend', function(event){
    endX = event.changedTouches[0].clientX;
    handleTouch(startX, endX);
- })
+ });
+   generate.classList.add('large');
 }
 
 function handleTouch(start,end){
