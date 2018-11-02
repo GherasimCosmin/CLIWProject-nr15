@@ -338,7 +338,7 @@ nav{display: none;}
 @media (min-width: 1281px) {
 
 	.container__fractal-list {
-		grid-template-columns: 33% 33% 33%;
+		grid-template-columns: 25% 25% 25% 25%;
 		padding-top: 40px;
 	}
 
@@ -569,6 +569,10 @@ nav{display: none;}
 		margin-right: 0.125em; 
 		margin-left: 0.125em;
 	}
+	.continue p{
+		line-height: 7em !important;
+		font-size: 2em;
+	}
 }
 
 /* ##Device = Laptops, Desktops
@@ -594,13 +598,13 @@ nav{display: none;}
 	}
 
 	.container__fractal-list {
-		grid-template-columns: 33% 33% 33%;
+		grid-template-columns: 25% 25% 25% 25%;
 		padding-top: 40px;
 	}
 
 	.container__fractal-list--item, .container__fractal-list--uploadFractal  {
-		width: 16em;
-		height: 16em;
+		width: 13em;
+		height: 13em;
 		margin:  2em 4em 2em 4em;
 	}
 
@@ -818,8 +822,8 @@ nav{display: none;}
 		font-size: 1em;
 	}
 	.continue p{
-		line-height: 5em !important;
-		font-size: 2em;
+		line-height: 5.5em !important;
+		font-size: 1.5em;
 	}
 }
 
