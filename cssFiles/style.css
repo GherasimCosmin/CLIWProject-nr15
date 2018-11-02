@@ -66,10 +66,16 @@ header h1 {
 	align-items: center;
 	font-size: 2em;
 }
+.container--text span{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 .container--text a {
 	display: inline-block;
 	text-decoration: none;
+	margin: 0.25em 0.25em 0.25em 0.25em;
 }
 
 .container--text__button {
@@ -196,12 +202,6 @@ canvas {
 	margin-top: 0;
 
 }
-.container__menu--larger{
-	margin-top: 20em;
-}
-.container__menu__buttons--larger{
-	font-size: 3em;
-}
 
 .container__menu__list, .container__menu__random, .container__menu__generate {
 	display: flex;
@@ -317,6 +317,14 @@ button{
 button:focus{
 	outline: none;
 }
+.savefractals{
+	margin-top: 2em;
+}
+.savefractalsH2{
+	text-align: center;
+	margin-top: 2em;
+	font-size: 2em;
+}
 
 /*device desktops*/
 @media (min-width: 1281px) {
@@ -349,6 +357,9 @@ button:focus{
 	.container__menu--button, .container__menu--save-button, .swiper__random--button,
 	.swiper__generate--button, .container__download--button button {
 		height: 50%;
+		font-size: 1.5em;
+	}
+	.container__menu--button{
 		font-size: 1.5em;
 	}
 	.container__menu__png, .container__menu__svg, .container__menu__both {
@@ -413,8 +424,6 @@ button:focus{
 		border-top: 1.2em solid #000;
 	}
 
-
-
 	canvas{
 		width: 75%;
 		height: 50%;
@@ -469,7 +478,13 @@ button:focus{
 		font-size: 1em;
 		width: 30%;
 	}
-
+	.savefractals{
+		margin-top: 2em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 2em;
+	}
 }
 
 /* ##Device = Laptops, Desktops
@@ -489,6 +504,13 @@ button:focus{
 	.container__fractal-list--uploadFractal p {
 		line-height: 7em;
 		font-size: 2.5em;
+	}
+	.savefractals{
+		margin-top: 2em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 2em;
 	}
 
 }
@@ -559,6 +581,13 @@ button:focus{
 	.swiper__random--button{
 		font-size: 1em;
 	}
+	.savefractals{
+		margin-top: 2em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 2em;
+	}
 }
 
 /* ##Device = Tablets, Ipads (landscape)
@@ -628,10 +657,17 @@ button:focus{
 	.swiper__random--button{
 		font-size: 1em;
 	}
+	.savefractals{
+		margin-top: 2em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 2em;
+	}
 }
 
 /*mobile landscape*/
-@media (min-device-width: 568px) and (max-device-width: 823px) and (orientation: landscape){
+@media (min-device-width: 568px) and (max-device-width: 730px) and (orientation: landscape){
 
 	.container__menu--larger{
 		margin-top: 2em;
@@ -642,5 +678,37 @@ button:focus{
 	.swiper__random--button{
 		font-size: 1em;
 	}
+	.savefractals{
+		margin-top: 1em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 1em;
+	}
+	.container__menu--button{
+		font-size: 1.5em;
+	}
 
+}
+/*for pixel2 xl*/
+@media (min-device-width: 731px) and (max-device-width: 823px) and (orientation: landscape){
+	.container__menu--larger{
+		margin-top: 2em;
+	}
+	.container__menu__buttons--larger{
+		font-size: 1.5em;
+	}
+	.swiper__random--button{
+		font-size: 1em;
+	}
+	.savefractals{
+		margin-top: 1em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 1em;
+	}
+	.container__menu--button{
+		font-size: 1.25em;
+	}
 }
