@@ -515,6 +515,13 @@ button:focus{
 		font-size: 1em;
 		width: 30%;
 	}
+	.savefractals{
+		margin-top: 2em;
+	}
+	.savefractalsH2{
+		text-align: center;
+		margin-top: 2em;
+	}
 }
 
 /* ##Device = Laptops, Desktops
