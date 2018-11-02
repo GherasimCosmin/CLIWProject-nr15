@@ -325,6 +325,8 @@ button:focus{
 	margin-top: 2em;
 }
 
+nav{display: none;}
+
 /*device desktops*/
 @media (min-width: 1281px) {
 
@@ -556,7 +558,7 @@ button:focus{
 	}
 	.swiper__generate__buttons > .swiper__generate--button{
 		font-size: 1em;
-		margin-right: 0.125em;
+		margin-right: 0.125em; 
 		margin-left: 0.125em;
 	}
 }
@@ -814,6 +816,7 @@ button:focus{
 
 @media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 
+	nav{display: none;}
 	header{
 		height: 50%;
 	}
@@ -889,6 +892,7 @@ button:focus{
 
 @media (min-device-width: 400px) and (max-device-width: 1024px) and (orientation: landscape) {
 
+	nav{display: none;}
 	header{
 		height: 50%;
 	}
@@ -963,6 +967,7 @@ button:focus{
 /*mobile landscape*/
 @media (min-device-width: 568px) and (max-device-width: 730px) and (orientation: landscape){
 
+	nav{display: none;}
 	.container__menu--larger{
 		margin-top: 2em;
 	}
@@ -984,6 +989,7 @@ button:focus{
 /*pixel2 xl*/
 @media (min-device-width: 731px) and (max-device-width: 823px) and (orientation: landscape){
 
+	nav{display: none;}
 	.container__menu--larger{
 		margin-top: 2em;
 	}
