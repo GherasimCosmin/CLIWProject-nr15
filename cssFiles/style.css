@@ -817,6 +817,10 @@ nav{display: none;}
 		line-height:5.5em;
 		font-size: 1em;
 	}
+	.continue p{
+		line-height: 5em !important;
+		font-size: 2em;
+	}
 }
 
 /* ##Device = Tablets, Ipads (portrait)
