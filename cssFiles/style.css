@@ -310,23 +310,94 @@ canvas {
 .swiper__random p{
 	padding-top: 2em;
 }
+button{
+	color:white;
+	border:0;
+}
+button:focus{
+	outline: none;
+}
 
 /*device desktops*/
 @media (min-width: 1281px) {
 
 	.container__fractal-list {
 		grid-template-columns: 33% 33% 33%;
+		padding-top: 40px;
 	}
 
 	.container__fractal-list--item, .container__fractal-list--uploadFractal  {
-		width: 22em;
-		height: 22em;
-		margin:  2em 6em 2em 6em;
+		width: 20em;
+		height: 20em;
+		margin:  2em 4em 2em 4em;
 	}
 
 	.container__fractal-list--uploadFractal p {
 		line-height: 7em;
 		font-size: 2.5em;
+	}
+	header{
+		height: 50%;
+	}
+	header h1{
+		font-size: 3em;
+	}
+	.container h2{
+		font-size: 2em;
+		margin-top: 1em;
+	}
+	.container__menu--button, .container__menu--save-button, .swiper__random--button,
+	.swiper__generate--button, .container__download--button button {
+		height: 50%;
+		font-size: 1.5em;
+	}
+	.container__menu__png, .container__menu__svg, .container__menu__both {
+		font-size: 1em;
+		margin-top: 2em;
+	}
+	.container__menu__png.large, .container__menu__svg.large, .container__menu__both.large{		background-color: #9C3F3F;
+		font-size: 2em;
+		margin-top: 0;
+	}
+
+
+	canvas{
+		width: 75%;
+		height: 50%;
+	}
+	.container__menu__download {
+		margin-top: 2em;
+	}
+	.container__menu__main{
+		margin-top: 2em;
+	}
+
+	.swiper__generate--form label {
+		font-size: 1.5em;
+	}
+
+	.swiper__generate--number-input, .swiper__generate--text-input {
+		height: 3.5em;
+	}
+
+	.swiper__generate--turn-up-button, .swiper__generate--turn-down-button {
+		height: 3.6em;
+	}
+	.arrow-up {
+		border-bottom: 1.75em solid gray;
+	}
+
+	.arrow-down {
+		border-top: 1.75em solid gray;
+	}
+	.container__menu--larger{
+		margin-top: 15em;
+	}
+	.container__menu__buttons--larger{
+		font-size: 3em;
+	}
+	.swiper__random--button{
+		font-size: 1em;
 	}
 
 }
