@@ -325,6 +325,13 @@ button:focus{
 	margin-top: 2em;
 }
 
+.swiper__generate__buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 nav{display: none;}
 
 /*device desktops*/
@@ -476,6 +483,7 @@ nav{display: none;}
 	}
 	.container__menu__download {
 		margin-top: 2em;
+		width: 49em;
 	}
 	.container__menu__main{
 		margin-top: 2em;
@@ -532,7 +540,7 @@ nav{display: none;}
 		margin-top: 1em;
 	}
 	.swiper__list > h2{
-		margin-top: 0em;
+		margin-top: 0;
 	}
 	.swiper__list > .container__fractal-list {
 		grid-template-columns: 33% 33% 33%;
