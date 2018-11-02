@@ -364,6 +364,8 @@ button:focus{
 		margin: 0;
 		padding: 0;
 		background-color: #4C1F1F;
+		display: flex;
+		justify-content: center;
 	}
 
 	hr {
@@ -393,18 +395,26 @@ button:focus{
 	}
 
 	.swiper__generate--text-input, .swiper__container label {
-		width: 30em;
+		width: 28em;
 		height: 3em;
+		font-size: .5em;
 	}
 
 	.swiper__generate--turn-up-button, .swiper__generate--turn-down-button {
 		width: 3em;
 		height: 3em;
+		font-size: .5em;
+	}
+
+	.swiper__generate--number-input {
+		width: 20em;
+		height: 3em;
+		font-size: .5em;
 	}
 
 	.arrow-up {
 		border-left: 1em solid transparent;
-		border-right: 1em  solid transparent;
+		border-right: 1em solid transparent;
 		border-bottom: 1.2em solid #000;
 	}
 	.arrow-down {
@@ -413,11 +423,47 @@ button:focus{
 		border-top: 1.2em solid #000;
 	}
 
+	.container__swiper {
+		font-size: .7em;
+		width: 49em;
+	}
 
+	.container__menu__main {
+		font-size: .7em;
+		width: 70em;
+	}
+
+	.swiper__generate--form {
+		padding-top: 2em;
+	}
+
+	.disable {
+		display: none;
+	}
+
+	.content-color {
+		display: flex;
+		justify-content: center;
+		background-color: #A44242;
+		margin-top: 5.7em;
+		height: 33em;
+		z-index: 0;
+		position:relative;
+	}
+
+	.container__swiper {
+		top: -5.7em;
+		left: 30em;
+		z-index: 2;
+		position:relative;
+	}
 
 	canvas{
-		width: 75%;
-		height: 50%;
+		width: 40em;
+		bottom: -3em;
+		height: 40em;
+		position: absolute;
+		z-index: 1;
 	}
 	.container__menu__download {
 		margin-top: 2em;
@@ -469,7 +515,6 @@ button:focus{
 		font-size: 1em;
 		width: 30%;
 	}
-
 }
 
 /* ##Device = Laptops, Desktops
