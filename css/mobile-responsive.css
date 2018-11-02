@@ -1,0 +1,197 @@
+/* ##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px*/
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+    nav{display: none;}
+    header{
+        height: 50%;
+    }
+    header h1{
+        font-size: 3em;
+    }
+    .container__menu--button, .container__menu--save-button, .swiper__random--button,
+    .swiper__generate--button, .container__download--button button {
+        height: 50%;
+        font-size: 1.5em;
+    }
+    canvas{
+        width: 75%;
+        height: 50%;
+    }
+    .container__menu__main{
+        margin-top: 2em;
+    }
+
+    .swiper__generate--form label {
+        font-size: 1.5em;
+    }
+
+    .swiper__generate--number-input, .swiper__generate--text-input {
+        height: 3.5em;
+    }
+
+    .swiper__generate--turn-up-button, .swiper__generate--turn-down-button {
+        height: 3.6em;
+    }
+    .arrow-up {
+        border-bottom: 1.75em solid gray;
+    }
+
+    .arrow-down {
+        border-top: 1.75em solid gray;
+    }
+
+    .container__fractal-list {
+        grid-template-columns: 50% 50%;
+    }
+
+    .container__fractal-list--item, .container__fractal-list--uploadFractal  {
+        width: 22em;
+        height: 22em;
+    }
+
+    .container__fractal-list--uploadFractal p {
+        line-height: 7em;
+        font-size: 2.5em;
+    }
+
+    .container__menu--larger{
+        margin-top: 15em;
+    }
+    .container__menu__buttons--larger{
+        font-size: 3em;
+    }
+    .swiper__random--button{
+        font-size: 1em;
+    }
+    .savefractals{
+        margin-top: 2em;
+    }
+    .savefractalsH2{
+        text-align: center;
+        margin-top: 2em;
+    }
+}
+
+/* ##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px*/
+
+@media (min-device-width: 400px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+    nav{display: none;}
+    header{
+        height: 50%;
+    }
+    header h1{
+        font-size: 3em;
+    }
+    .container__menu--button, .container__menu--save-button, .swiper__random--button,
+    .swiper__generate--button, .container__download--button button {
+        height: 50%;
+        font-size: 1.5em;
+    }
+
+    canvas{
+        width: 75%;
+        height: 50%;
+    }
+    .container__menu__main{
+        margin-top: 2em;
+    }
+
+    .swiper__generate--form label {
+        font-size: 1.5em;
+    }
+
+    .swiper__generate--number-input, .swiper__generate--text-input {
+        height: 3.5em;
+    }
+
+    .swiper__generate--turn-up-button, .swiper__generate--turn-down-button {
+        height: 3.6em;
+    }
+    .arrow-up {
+        border-bottom: 1.75em solid gray;
+    }
+
+    .arrow-down {
+        border-top: 1.75em solid gray;
+    }
+
+    .container__fractal-list {
+        grid-template-columns: 50% 50%;
+        margin-top: 5em;
+    }
+
+    .container__fractal-list--item, .container__fractal-list--uploadFractal  {
+        width: 24em;
+        height: 18em;
+    }
+
+    .container__fractal-list--uploadFractal p {
+        line-height: 4em;
+    }
+
+    .container__menu--larger{
+        margin-top: 15em;
+    }
+    .container__menu__buttons--larger{
+        font-size: 3em;
+    }
+    .swiper__random--button{
+        font-size: 1em;
+    }
+    .savefractals{
+        margin-top: 2em;
+    }
+    .savefractalsH2{
+        text-align: center;
+        margin-top: 2em;
+    }
+}
+
+/*mobile landscape*/
+@media (min-device-width: 568px) and (max-device-width: 730px) and (orientation: landscape){
+
+    nav{display: none;}
+    .container__menu--larger{
+        margin-top: 2em;
+    }
+    .container__menu__buttons--larger{
+        font-size: 1.5em;
+    }
+    .swiper__random--button{
+        font-size: 1em;
+    }
+    .savefractals{
+        margin-top: 2em;
+    }
+    .savefractalsH2{
+        text-align: center;
+        margin-top: 2em;
+    }
+
+}
+/*pixel2 xl*/
+@media (min-device-width: 731px) and (max-device-width: 823px) and (orientation: landscape){
+
+    nav{display: none;}
+    .container__menu--larger{
+        margin-top: 2em;
+    }
+    .container__menu__buttons--larger{
+        font-size: 1.5em;
+    }
+    .swiper__random--button{
+        font-size: 1em;
+    }
+    .savefractals{
+        margin-top: 1em;
+    }
+    .savefractalsH2{
+        text-align: center;
+        margin-top: 1em;
+    }
+
+}

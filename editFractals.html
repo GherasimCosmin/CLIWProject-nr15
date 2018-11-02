@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>I-Fractr Guest Mode</title>
-	<link rel="stylesheet" type="text/css" href="cssFiles/style.css">
+	<link rel="stylesheet" type="text/css" href="css/small-html-reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/desktop-responsive.css">
 </head>
 <body>
 	<header>
@@ -34,18 +38,6 @@
 				</div>
 
 				<div class="container__menu__swiper">
-					<div class="swiper__list">
-						<h2>Choose a fractal to edit:</h2>
-						<div class="container__fractal-list">
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--item"></div>
-							<div class="container__fractal-list--uploadFractal"><p>Upload fractal...</p></div>
-						</div>
-					</div>
 					<div class="swiper__generate">
 						<form class="swiper__generate--form">
 							<label>Iterations</label>
@@ -87,6 +79,17 @@
 							
 						</form>
 					</div>
+					<div class="swiper__list">
+						<h2>Choose a fractal to edit:</h2>
+						<div class="container__fractal-list">
+							<div class="container__fractal-list--item"></div>
+							<div class="container__fractal-list--item"></div>
+							<div class="container__fractal-list--item"></div>
+							<div class="container__fractal-list--item"></div>
+							<div class="container__fractal-list--item"></div>
+							<div class="container__fractal-list--uploadFractal"><p>Upload fractal...</p></div>
+						</div>
+					</div>
 					<div class="swiper__random">
 						<p>If you re sure about getting a random, click bellow.</p>
 						<p>But beware!<br>In doing so you'll lose all of your current work! </p>
@@ -97,6 +100,6 @@
 		</div>
 
 	</main>
-	<script src="javascriptFiles/swiper.js"></script>
+	<script src="js/swiper.js"></script>
 </body>
 </html>
