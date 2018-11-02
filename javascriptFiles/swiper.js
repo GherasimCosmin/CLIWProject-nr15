@@ -36,7 +36,35 @@ window.onload = function(){
    endX = event.changedTouches[0].clientX;
    handleTouch(startX, endX);
  });
-   generate.classList.add('large');
+  generate.classList.add('large');
+
+  list.addEventListener("click", function(){
+    list.classList.add('large');
+    generate.classList.remove('large');
+    random.classList.remove('large');
+    document.querySelector(".swiper__list").style.display="block";
+    document.querySelector(".swiper__generate").style.display="none";
+    document.querySelector(".swiper__random").style.display="none";
+
+  });
+  generate.addEventListener("click", function(){
+    generate.classList.add('large');
+    list.classList.remove('large');
+    random.classList.remove('large');
+    document.querySelector(".swiper__list").style.display="none";
+    document.querySelector(".swiper__generate").style.display="block";
+    document.querySelector(".swiper__random").style.display="none";
+
+  });
+  random.addEventListener("click", function(){
+    random.classList.add('large');
+    list.classList.remove('large');
+    generate.classList.remove('large');
+    document.querySelector(".swiper__list").style.display="none";
+    document.querySelector(".swiper__generate").style.display="none";
+    document.querySelector(".swiper__random").style.display="block";
+
+  });
 }
 
 function handleTouch(start,end){

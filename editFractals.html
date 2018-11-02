@@ -12,10 +12,10 @@
 	</header>
 
 	<nav>
-		<button>New</button>
-		<button>Continue</button>
-		<button>Download</button>
-		<button>Logout</button>
+		<button onclick="window.location.href='editFractals.html'">New</button>
+		<button onclick="window.location.href='continue.html'">Continue</button>
+		<button onclick="window.location.href='download.html'">Download</button>
+		<button onclick="window.location.href='index.html'">Logout</button>
 	</nav>
 
 	<main class="container">
@@ -27,11 +27,11 @@
 			</div>
 
 			<div class="container__swiper">
-				<ul class="container__menu__main ">
-					<li class="container__menu__list">List</li>
-					<li class="container__menu__generate">Generate</li>
-					<li class="container__menu__random">Random</li>
-				</ul>
+				<div class="container__menu__main ">
+					<button class="container__menu__list">List</button>
+					<button class="container__menu__generate">Generate</button>
+					<button class="container__menu__random">Random</button>
+				</div>
 
 				<div class="container__menu__swiper">
 					<div class="swiper__list">
@@ -78,8 +78,11 @@
 							<input class="swiper__generate--text-input" type="text" name="rule4">
 							<label>Rule5</label>
 							<input class="swiper__generate--text-input" type="text" name="rule5">
-
-							<button class="swiper__generate--button">Generate</button>
+							<div class="swiper__generate__buttons">
+								<button class="swiper__generate--button">Generate</button>
+								<button class="swiper__generate--button">Save</button>
+							</div>
+							
 						</form>
 					</div>
 					<div class="swiper__random">
