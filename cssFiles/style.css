@@ -399,6 +399,22 @@ button:focus{
 	.swiper__random--button{
 		font-size: 1em;
 	}
+	.container__menu{
+		margin-top: 6em;
+		margin-bottom: 2em;
+	}
+	.container--text{
+		font-size: 1em;
+	}
+	.container__menu--input {
+		font-size: 1em;
+		width: 30%;
+	}
+
+	.container__menu--submit {
+		font-size: 1em;
+		width: 30%;
+	}
 
 }
 
