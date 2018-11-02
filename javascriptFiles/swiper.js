@@ -43,7 +43,7 @@ function handleTouch(start,end){
   if(end-start > 0){
     left();
   }
-  else{
+  else if(end-start < 0){
     right();
   }
 }
