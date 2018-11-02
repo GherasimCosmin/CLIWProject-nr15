@@ -573,6 +573,9 @@ nav{display: none;}
 		line-height: 7em !important;
 		font-size: 2em;
 	}
+	.swiper__random{
+		margin-top: 7em; 	
+	}
 }
 
 /* ##Device = Laptops, Desktops
@@ -824,6 +827,9 @@ nav{display: none;}
 	.continue p{
 		line-height: 5.5em !important;
 		font-size: 1.5em;
+	}
+	.swiper__random{
+		margin-top: 7em; 	
 	}
 }
 
