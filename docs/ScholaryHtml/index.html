@@ -2,181 +2,172 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>I-Fractr</title>
-  <link rel="stylesheet" href="scholarly.min.css">
-  <script src="js/scholarly.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<title>I-Fractr</title>
+	<link rel="stylesheet" href="scholarly.min.css">
+	<script src="js/scholarly.min.js"></script>
 </head>
 
 <body prefix="schema: http://schema.org">
-<header>
-  <h1>I-Fractr</h1>
-</header>
-<div role="contentinfo">
-  <dl>
-    <dt>Authors</dt>
-    <dd>
-      Borșan Ionuț-Răzvan, Gherasim Cosmin-Gabriel
-    </dd>
-  </dl>
-</div>
-<section typeof="sa:Abstract" id="abstract" role="doc-abstract">
-  <h2>Abstract</h2>
-  <p>
-    The purpose of the I-Fractr website is to offer an easier way of understanding and playing with fractals. The project itself is supposed to allow students and professors alike to experiment and see the practical implications of their theoretical studies.
-  </p>
-</section>
-<section typeof="sa:Introduction" id="introduction" role="doc-introduction">
-  <h2>Introduction</h2>
-  <p>
-    The beauty of I-Fractr comes from it's verastility. While using it, you can choose between multiple ways of creating fractals.
-    Some of these ways include going through an old-school fractal generator, displaying the result on a huge canvas,
-    choosing to see and modify some of our most dear fractals - or even simply choosing a randomize option, with the resulting fractal's quality varying wildly.
-    Our favorite ways of creating fractals though is by using the mouse feature available on desktop - if you drag anywhere on the canvas, the fractal changes automatically!
-  </p>
-  <p>
-    You can also save fractals in different formats, upload them on the go or simply let the website retain your work so that you can continue it at a later time.
-  </p>
-</section>
-<section typeof="sa:Structure" id="structure">
-  <h2>Structure</h2>
-  <p>
+	<header>
+		<h1>I-Fractr</h1>
+	</header>
+	<div role="contentinfo">
+		<dl>
+			<dt>Authors</dt>
+			<dd>
+				Borșan Ionuț-Răzvan, Gherasim Cosmin-Gabriel
+			</dd>
+		</dl>
+	</div>
+	<section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+		<h2>Abstract</h2>
+		<p>
+			The purpose of the I-Fractr website is to offer an easier way of understanding and playing with fractals. The project itself is supposed to allow students and professors alike to experiment and see the practical implications of their theoretical studies.
+		</p>
+	</section>
+	<section typeof="sa:Introduction" id="introduction" role="doc-introduction">
+		<h2>Introduction</h2>
+		<p>
+			The beauty of I-Fractr comes from it's verastility. While using it, you can choose between multiple ways of creating fractals.
+			Some of these ways include going through an old-school fractal generator, displaying the result on a huge canvas,
+			choosing to see and modify some of our most dear fractals - or even simply choosing a randomize option, with the resulting fractal's quality varying wildly.
+			Our favorite ways of creating fractals though is by using the mouse feature available on desktop - if you drag anywhere on the canvas, the fractal changes automatically!
+		</p>
+		<p>
+			You can also save fractals in different formats, upload them on the go or simply let the website retain your work so that you can continue it at a later time.
+		</p>
+	</section>
+	<section typeof="sa:Structure" id="structure">
+		<h2>Structure</h2>
+		<p>
 
-  </p>
-  <section id="LandingPage">
-    <h3>The <code>landing page</code></h3>
-    <p>
-      The landing page is a simple login page - giving the user the options to either login or sign up. After login in, a menu will appear -
-      showing all the options a user has when using our website: Creating a new fractal, Continuing his previous work, Download fractals as PNG/SVG or simply, loging out.
-    </p>
-    <section id="New">
-      <h3>The <code>New Page</code></h3>
-      <p>
-        The "New" section of our website is where the magic happens when it comes to creating fractals. The user is shown a canvas and three options: to either choose a
-        fractal from our best-of list (upon clicking one, it appears in the canvas & the user can modify it in the "Generate" tab.
-        The "Generate" tab is meant for our hardcore userbase - those that want to use hardcore mathematics to create perfect fractals. Upon clicking the "Generate" button,
-        their respective fractal is build in the canvas.
-        Lastly, the "Random" tab is an experimental feature and meant to be treated as a little fun functionality. But even then, you may be surprised at what it can deliver. Be sure to try1
-        Also, here the user can save his work on our database by clicking the "Save" button.
-      </p>
-    </section>
-    <section id="Continue">
-      <h3>The <code>Continue Page</code></h3>
-      <p>
-        As mentioned above, when creating fractals the user is given the option of saving them on our servers.
-        If one chooses to do so, when one logs in at a later date their work is ready and waiting for them, in the "Continue" tab.
-        By clicking on one fractal, the user is sent to the "New" tab with all the fields completed with the necessary information.
-      </p>
-    </section>
-    <section id="Download">
-      <h3>The <code>Download Page</code></h3>
-      <p>
-        Whenever a uses may want to share his work, or simply take his work offline, he's given the option to use our "Download" page.
-        Here he can choose which fractals to download, in which formats, and whether if he wants to download them all in bulk or one by one.
-      </p>
-    </section>
-    <section id="Logout">
-      <h3>The <code>Logout</code></h3>
-      <p>
-        When the work is done, there's no reason to hang around. This is the hero's exit.
-      </p>
-    </section>
-
-    <section id="Use-cases">
-      <h3>Use Cases</h3>
-      <p>
-        We thought of some use cases in more detail, and we also took a look at what we want to achieve with our website.
-        Here are the use-case diagrams:
-      </p>
-
-      <img src="../../Architecture" >
-    </section>
-  </section>
-</section>
+		</p>
+		<section id="LandingPage">
+			<h3>The <code>landing page</code></h3>
+			<p>
+				The landing page is a simple login page - giving the user the options to either login or sign up. After login in, a menu will appear -
+				showing all the options a user has when using our website: Creating a new fractal, Continuing his previous work, Download fractals as PNG/SVG or simply, loging out.
+			</p>
+			<section id="New">
+				<h3>The <code>New Page</code></h3>
+				<p>
+					The "New" section of our website is where the magic happens when it comes to creating fractals. The user is shown a canvas and three options: to either choose a
+					fractal from our best-of list (upon clicking one, it appears in the canvas & the user can modify it in the "Generate" tab.
+					The "Generate" tab is meant for our hardcore userbase - those that want to use hardcore mathematics to create perfect fractals. Upon clicking the "Generate" button,
+					their respective fractal is build in the canvas.
+					Lastly, the "Random" tab is an experimental feature and meant to be treated as a little fun functionality. But even then, you may be surprised at what it can deliver. Be sure to try1
+					Also, here the user can save his work on our database by clicking the "Save" button.
+				</p>
+			</section>
+			<section id="Continue">
+				<h3>The <code>Continue Page</code></h3>
+				<p>
+					As mentioned above, when creating fractals the user is given the option of saving them on our servers.
+					If one chooses to do so, when one logs in at a later date their work is ready and waiting for them, in the "Continue" tab.
+					By clicking on one fractal, the user is sent to the "New" tab with all the fields completed with the necessary information.
+				</p>
+			</section>
+			<section id="Download">
+				<h3>The <code>Download Page</code></h3>
+				<p>
+					Whenever a uses may want to share his work, or simply take his work offline, he's given the option to use our "Download" page.
+					Here he can choose which fractals to download, in which formats, and whether if he wants to download them all in bulk or one by one.
+				</p>
+			</section>
+			<section id="Logout">
+				<h3>The <code>Logout</code></h3>
+				<p>
+					When the work is done, there's no reason to hang around. This is the hero's exit.
+				</p>
+			</section>
+	
+	</section>
+	</section>
 
 
-<section  typeof="sa:Architecture" id="architecture">
-  <h2>Architecture</h2>
+	<section  typeof="sa:Architecture" id="architecture">
+		<h2>Architecture</h2>
 
-  <p>
-    Our choice was to make I-Fractr a Single Page Application. Why? There's a plethora of reasons to use a SPA architecture instead of a MPA one - first and foremost,
-    the Single Page Application is fast. In fact, it is terribly fast, as most resources (HTML, CSS, Scripts) are only loaded once throughout the lifetime
-    of the application. Only data is transmitted back and forth.
-  </p>
-  <p>
-    One of the biggest disadvantages of MPAs is that frontend and backend development are tightly coupled. Thus, the development becomes more complex and
-    starts to require more time.
-  </p>
-  <p>
-    Since our application is mainly client-side focused and, in theory, should not become a huge app, making it a Single Page Application is a given.
-  </p>
-</section>
+		<p>
+			Our choice was to make I-Fractr a Single Page Application. Why? There's a plethora of reasons to use a SPA architecture instead of a MPA one - first and foremost,
+			the Single Page Application is fast. In fact, it is terribly fast, as most resources (HTML, CSS, Scripts) are only loaded once throughout the lifetime
+			of the application. Only data is transmitted back and forth.
+		</p>
+		<p>
+			One of the biggest disadvantages of MPAs is that frontend and backend development are tightly coupled. Thus, the development becomes more complex and
+			starts to require more time.
+		</p>
+		<p>
+			Since our application is mainly client-side focused and, in theory, should not become a huge app, making it a Single Page Application is a given.
+		</p>
+	</section>
 
-<section typeof="sa:Intermediate Stages" id="intermediate_stages">
-  <h2>Intermediate Stages</h2>
-  <h3>Brainstorming</h3>
-  <p>
-    The first thing we did after choosing our project was have an intense brainstorming session. We tried to come up with new and innovative ideeas,
-    find a balance between what we had to bring to the table and what we wanted to make. Lots of ideeas started here, lots more have been discarded since -
-    but everything we did has its roots in this brainstorming session.
-  </p>
+	<section typeof="sa:Intermediate Stages" id="intermediate_stages">
+		<h2>Intermediate Stages</h2>
+		<h3>Brainstorming</h3>
+		<p>
+			The first thing we did after choosing our project was have an intense brainstorming session. We tried to come up with new and innovative ideeas,
+			find a balance between what we had to bring to the table and what we wanted to make. Lots of ideeas started here, lots more have been discarded since -
+			but everything we did has its roots in this brainstorming session.
+		</p>
 
-  <h3>Planning</h3>
-  <p>
-    After coming up with new and bright ideeas, we had a lot to discuss about the ways we could implement them in our website. It is at this point we realised that
-    not everything is as easy as it seems, and as a consequence we had to admit that some features won't make it to the end product. However, we also managed to polish
-    what we thought achievable and bring forth our hypothetical version of I-Fractr.
-  </p>
+		<h3>Planning</h3>
+		<p>
+			After coming up with new and bright ideeas, we had a lot to discuss about the ways we could implement them in our website. It is at this point we realised that
+			not everything is as easy as it seems, and as a consequence we had to admit that some features won't make it to the end product. However, we also managed to polish
+			what we thought achievable and bring forth our hypothetical version of I-Fractr.
+		</p>
 
-  <h3>Design</h3>
-  <p>
-    It is useless to have great things to implement if we can't present them in a beautiful and clear way. That's why we put a lot of effort in our designs - we started
-    with a pen and a paper, then we moved to prototyping, and little by little we managed to have our entire design made in Adobe XD, in wireframes. This allowed us to change
-    things incredibly fast, without having to touch any code, until we achieved our version of the app. We had to take into consideration color combinations, font combinations,
-    color or font qualities, proportions and lots of other design principles.
-  </p>
+		<h3>Design</h3>
+		<p>
+			It is useless to have great things to implement if we can't present them in a beautiful and clear way. That's why we put a lot of effort in our designs - we started
+			with a pen and a paper, then we moved to prototyping, and little by little we managed to have our entire design made in Adobe XD, in wireframes. This allowed us to change
+			things incredibly fast, without having to touch any code, until we achieved our version of the app. We had to take into consideration color combinations, font combinations,
+			color or font qualities, proportions and lots of other design principles.
+		</p>
 
-  <h3>Development</h3>
-  <p>
-    With the why, the how and the looks out of the way, all that was left for us to do was start coding. Until now, only the looks and implemented in code with none of the
-    functionality available, but our future plans include starting the work on the usability of our site.
-  </p>
+		<h3>Development</h3>
+		<p>
+			With the why, the how and the looks out of the way, all that was left for us to do was start coding. Until now, only the looks and implemented in code with none of the
+			functionality available, but our future plans include starting the work on the usability of our site.
+		</p>
 
-  <h3>Conclusion</h3>
-  <p>
-    We believe that the main take-away from our process until now is that it is not a done deal - we plan on going back and brainstorm again if the need arises,
-    we are sure that more planning will be needed once we start implementing our app's functionality and that it's very probable we'll have to make design changes to
-    accomodate whatever good or bad thing may appear in the future. And, of course, development will continue through it all.
-  </p>
-</section>
+		<h3>Conclusion</h3>
+		<p>
+			We believe that the main take-away from our process until now is that it is not a done deal - we plan on going back and brainstorm again if the need arises,
+			we are sure that more planning will be needed once we start implementing our app's functionality and that it's very probable we'll have to make design changes to
+			accomodate whatever good or bad thing may appear in the future. And, of course, development will continue through it all.
+		</p>
+	</section>
 
-<section typeof="sa:Data Modelling" id="data_modelling">
-  <h2>Data Modelling</h2>
+	<section typeof="sa:Data Modelling" id="data_modelling">
+		<h2>Data Modelling</h2>
 
-  <p>
-    For our app, we implemented a login functionality - which means of course that some credentials are needed. That is why our MySQL database has a table
-    dedicated to user credentials (username and password, declared as strings). Because we have a "Save as" and "Download" option, we need to save the user's fractals
-    in the database. Our plan is to save the fractal either as a SVG or a PNG on the server (based on the user's choice), then create a new entry inside the database with
-    the path to the newly saved fractal and the id of its creator.
-  </p>
+		<p>
+			For our app, we implemented a login functionality - which means of course that some credentials are needed. That is why our MySQL database has a table
+			dedicated to user credentials (username and password, declared as strings). Because we have a "Save as" and "Download" option, we need to save the user's fractals
+			in the database. Our plan is to save the fractal either as a SVG or a PNG on the server (based on the user's choice), then create a new entry inside the database with
+			the path to the newly saved fractal and the id of its creator.
+		</p>
 
-  <p>
-    We also plan to apply the schema microdata (itemscope, itemtype & itemprop) on our app, so that it becomes easier for search engines to identify its purpose.
-    The itemtypes we believe are suitable for our project are ImageObject, Painting, VisualArtwork, WebPage and ImageGallery (and will be distributed appropriately throughout the website),
-    while the itemscope will be determined based on the content assigned to it.
-  </p>
-</section>
+		<p>
+			We also plan to apply the schema microdata (itemscope, itemtype & itemprop) on our app, so that it becomes easier for search engines to identify its purpose.
+			The itemtypes we believe are suitable for our project are ImageObject, Painting, VisualArtwork, WebPage and ImageGallery (and will be distributed appropriately throughout the website),
+			while the itemscope will be determined based on the content assigned to it.
+		</p>
+	</section>
 
-<section typeof="sa:Client-based Data Storage" id="data_storage">
-  <h2>Client-based Data Storage</h2>
+	<section typeof="sa:Client-based Data Storage" id="data_storage">
+		<h2>Client-based Data Storage</h2>
 
-  <p>
-    Our plan right now is to have a Fractal singleton object available at all times, that is displayed everytime the user is using the canvas. What does this mean?
-    It means that the if the user edits the fractal, then the change is registered in this global singleton object. This way, if the user decides to access some other tab in our app
-    and then return to the Edit tab, he won't lose any progress he made on his work. If the singleton is empty, then a blank canvas is displayed.
-  </p>
-</section>
+		<p>
+			Our plan right now is to have a Fractal singleton object available at all times, that is displayed everytime the user is using the canvas. What does this mean?
+			It means that the if the user edits the fractal, then the change is registered in this global singleton object. This way, if the user decides to access some other tab in our app
+			and then return to the Edit tab, he won't lose any progress he made on his work. If the singleton is empty, then a blank canvas is displayed.
+		</p>
+	</section>
 </body>
 
 </html>
