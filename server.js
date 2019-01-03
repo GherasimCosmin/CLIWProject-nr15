@@ -3,6 +3,11 @@ let express = require("express");
 let mysql = require("mysql");
 let app = express();
 
+app.use(express.static(__dirname+'/public/'));
+app.set('views', __dirname + '/views');
+app.set('js',__dirname +'/js');
+
+
 let con = mysql.createConnection({
 	host: "localhost",
 	user: "admin",
@@ -11,7 +16,23 @@ let con = mysql.createConnection({
 });
 
 app.get('/', function(req, res) {
-	res.send('Hello Cosmin');
+	res.sendFile(__dirname+'/views/index.html');
+});
+
+app.post('/signIn', function(req, res) {
+	res.sendFile(__dirname+'/views/enterAsUser.html');
+});
+
+app.get('/editFractals', function(req, res) {
+	res.sendFile(__dirname+'/views/editFractals.html');
+});
+
+app.get('/continue', function(req, res) {
+	res.sendFile(__dirname+'/views/continue.html');
+});
+
+app.get('/download', function(req, res) {
+	res.sendFile(__dirname+'/views/download.html');
 });
 
 app.get('/index', function (req, res) {

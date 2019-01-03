@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta property="og:image" content=" https://www.google.ro/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjdjfecwP_dAhUBElAKHQ03BuUQjRx6BAgBEAU&url=http%3A%2F%2Franchrun.wikia.com%2Fwiki%2FFile%3A600px-Facebook_logo_square.png&psig=AOvVaw1lDgG7hKM6KUOwGjs5s9Vt&ust=1539385552361382" />
 	<meta property="og:title" content="I-fractr" />
-	<meta property="og:url" content="file:///C:/Users/Gherasim%20Cosmin/Documents/cliwgit/CLIWProject-nr15/enterAsUser.html" />
+	<meta property="og:url" content="file:///C:/Users/Gherasim%20Cosmin/Documents/cliwgit/CLIWProject-nr15/signUp.html" />
 	<meta property="og:site_name" content="I-fractr" />
 
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:url" content="file:///C:/Users/Gherasim%20Cosmin/Documents/cliwgit/CLIWProject-nr15/enterAsUser.html" />
+	<meta name="twitter:url" content="file:///C:/Users/Gherasim%20Cosmin/Documents/cliwgit/CLIWProject-nr15/signUp.html" />
 	<meta name="twitter:title" content="I-fractr" />
 	<meta name="twitter:description" content="I-fractr a fractal creation and management system" />
 	<meta name="twitter:image" content=" https://www.google.ro/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjdjfecwP_dAhUBElAKHQ03BuUQjRx6BAgBEAU&url=http%3A%2F%2Franchrun.wikia.com%2Fwiki%2FFile%3A600px-Facebook_logo_square.png&psig=AOvVaw1lDgG7hKM6KUOwGjs5s9Vt&ust=1539385552361382" />
 
-	<title>I-Fractr</title>
+	<title>l-fractr SignUp</title>
 	<link rel="stylesheet" type="text/css" href="../css/small-html-reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/mobile-responsive.css">
@@ -25,13 +25,11 @@
 		<hr>
 	</header>
 	<main class="container">
-		<h2 class="container--title">Welcome back!</h2>
-		<div class="container__menu">
-			<button class="container__menu--button" onclick="location.href='editFractals.html'">New</button>
-			<button class="container__menu--button" onclick="location.href='continue.html'">Continue</button>
-			<button class="container__menu--button" onclick="location.href='download.html'">Download</button>
-			<button class="container__menu--button" onclick="location.href='index.html'">Logout</button>
-		</div>
+		<form class="container__menu" action="/signUp" method="GET">
+			<input class="container__menu--input" type="text" name="username" placeholder="Username" required="required">
+			<input class="container__menu--input" type="password" name="password" placeholder="Password" required="required">
+			<input class="container__menu--submit" type="submit" name="submit" value="Sign Up">
+		</form>
 	</main>
 </body>
 </html>

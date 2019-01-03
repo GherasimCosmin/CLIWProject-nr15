@@ -1,0 +1,99 @@
+.swiper__generate--button, .swiper__random--button {
+    width: 15.5em;
+    height: 3em;
+}
+
+.swiper__random--button {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+.swiper__generate--button {
+    font-size: 3em;
+    margin-top: 1em;
+}
+
+
+.container__menu__swiper {
+    background-color: #A44242;
+    margin-top: -4.6em;
+    margin-bottom: 8em;
+    padding: 0;
+}
+
+.swiper__list h2 {
+    padding-top: 1.5em;
+}
+
+.swiper__generate--form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.swiper__generate--form label {
+    font-size: 3em;
+    margin: .3em;
+}
+
+.swiper__generate--number-input, .swiper__generate--text-input {
+    height: 7em;
+}
+
+.swiper__generate--number-input {
+    width: 39em;
+    border: none;
+}
+
+.swiper__generate--text-input {
+    width: 55em;
+}
+
+.swiper__generate--special-label {
+    display: flex;
+}
+
+.swiper__generate__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper__generate--turn-up-button, .swiper__generate--turn-down-button {
+    height: 7.2em;
+    width: 7.2em;
+    background-color: #fff;
+    border: none;
+    margin-left: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-up, .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 2em solid transparent;
+    border-right: 2em solid transparent;
+}
+
+.arrow-up {
+    border-bottom: 3em solid gray;
+}
+
+.arrow-down {
+    border-top: 3em solid gray;
+}
+
+.swiper__random {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.swiper__random p {
+    padding-top: 2em;
+}
