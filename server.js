@@ -22,6 +22,9 @@ app.get('/', function(req, res) {
 app.post('/signIn', function(req, res) {
 	res.sendFile(__dirname+'/views/enterAsUser.html');
 });
+app.get('/signUp', function(req, res) {
+	res.sendFile(__dirname+'/views/signUp.html');
+});
 
 app.get('/editFractals', function(req, res) {
 	res.sendFile(__dirname+'/views/editFractals.html');
