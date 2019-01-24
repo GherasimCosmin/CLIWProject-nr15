@@ -191,3 +191,31 @@ function drawline(x,y,x2,y2){
   drawobj.lineTo(x2,y2);
   drawobj.stroke();
 }
+
+const form = document.querySelector('form');
+const saveButton = document.getElementById('save__button');
+const iterations = document.getElementById('iterations');
+const angle = document.getElementById('angle');
+const axiom = document.getElementById('axiom');
+const rule_1 = document.getElementById('rule-1');
+const rule_2 = document.getElementById('rule-2');
+const rule_3 = document.getElementById('rule-3');
+const rule_4 = document.getElementById('rule-4');
+const rule_5 = document.getElementById('rule-5');
+
+
+saveButton.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  let fractals_array = JSON.parse(localStorage.getItem('fractals'));
+  if(iterations.value) { fractals_array.push(iterations.value); }
+  if(angle.value) { fractals_array.push(angle.value); }
+  if(axiom.value) { fractals_array.push(axiom.value); }
+  if(rule_1.value) { fractals_array.push(rule_1.value); }
+  if(rule_2.value) { fractals_array.push(rule_2.value); }
+  if(rule_3.value) { fractals_array.push(rule_3.value); }
+  if(rule_4.value) { fractals_array.push(rule_4.value); }
+  console.log(fractals_array)
+  localStorage.setItem('fractals', JSON.stringify(fractals_array));
+  console.log(JSON.parse(localStorage.getItem('fractals')));
+});
