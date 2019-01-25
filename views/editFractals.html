@@ -33,17 +33,17 @@
 		<button onclick="window.location.href='/'">Logout</button>
 	</nav>
 
-	<main class="container">
+	<main class="container" itemscope itemtype="http://schema.org/SoftwareApplication">
 
-		<div class="content-color">
-			<div class="container__menu">
+		<div class="content-color" itemscope itemtype="http://schema.org/WebApplication">
+			<div class="container__menu" itemscope itemtype="http://schema.org/DrawAction">
 				<button class="container__menu--save-button disable" onclick="location.href='savefractals.html'">Save</button>
-				<!-- <canvas id="thecanvas" width="2000" height="2000"></canvas> -->
+				<canvas id="thecanvas" width="2000" height="2000" itemprop="object"></canvas>
 				<div id="drawing"></div>
 			</div>
 
 			<div class="container__swiper">
-				<div class="container__menu__main ">
+				<div class="container__menu__main" itemscope itemtype="http://schema.org/CreateAction">
 					<button class="container__menu__list">List</button>
 					<button class="container__menu__generate">Generate Canvas</button>
 					<button class="container__menu__random">Generate Svg</button>
@@ -51,7 +51,7 @@
 
 				<div class="container__menu__swiper">
 					<div class="swiper__generate">
-						<div id="form" class="swiper__generate--form">
+						<div class="swiper__generate--form" itemscope itemtype="http://schema.org/Dataset">
 							<label>Iterations</label>
 							<div class="swiper__generate--special-label">
 								<input id="fIter" class="swiper__generate--number-input" type="number" name="iterations" min="1" max="6" value="5">
@@ -84,11 +84,11 @@
 							<input id="fRule4" class="swiper__generate--text-input" type="text" name="rule4" value="">
 							<label>Rule5</label>
 							<input id="fRule5" class="swiper__generate--text-input" type="text" name="rule5" value="">
-							<div class="swiper__generate__buttons">
-								<button onclick="lsystemSetUp('canvas')" from="canvas" class="swiper__generate--button">Generate</button>
+							<div class="swiper__generate__buttons" itemscope itemtype="http://schema.org/Painting">
+								<button onclick="lsystemSetUp('canvas')" from="canvas" class="swiper__generate--button" >Generate</button>
 								<button id="save__button" class="swiper__generate--button">Save</button>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="swiper__list">
@@ -132,10 +132,10 @@
 							<label>Rule5</label>
 							<input id="fRule5Svg" class="swiper__generate--text-input" type="text" name="rule5" value="">
 							<div class="swiper__generate__buttons">
-								<button onclick="lsystemSetUp('Svg')" from="canvas" class="swiper__generate--button">Generate</button>
+								<button onclick="lsystemSetUp('Svg')" from="svg" class="swiper__generate--button">Generate</button>
 								<button class="swiper__generate--button">Save</button>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>

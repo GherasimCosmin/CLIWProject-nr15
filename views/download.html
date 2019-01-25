@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/mobile-responsive.css">
 	<link rel="stylesheet" type="text/css" href="../css/desktop-responsive.css">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/SoftwareApplication">
 	<header>
 		<h1>I-Fractr</h1>
 		<hr>
@@ -33,7 +33,7 @@
 		<button onclick="window.location.href='/'">Logout</button>
 	</nav>
 
-	<main class="container">
+	<main class="container" itemscope itemtype="http://schema.org/WebApplication">
 
 		<h2>To download, touch the fractal:</h2>
 
@@ -42,8 +42,13 @@
 			<button class="container__menu__svg">SVG</button>
 			<button class="container__menu__both">Both</button>
 		</div>
-
-		<div id="fractal-list" class="container__fractal-list">
+		<div id="fractal-list" class="container__fractal-list" itemscope itemtype="http://schema.org/ImageGallery">
+			<div class="container__fractal-list--item"></div>
+			<div class="container__fractal-list--item"></div>
+			<div class="container__fractal-list--item"></div>
+			<div class="container__fractal-list--item"></div>
+			<div class="container__fractal-list--item"></div>
+			<div class="container__fractal-list--item"></div>
 		</div>
 		<div class="container__download--button">
 			<button onclick="download_image()">Download All</button>
