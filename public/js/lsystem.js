@@ -168,13 +168,6 @@ function lsystemSetUp(from){
 	// if(!rulesValidation(data.rules)) return false;
 	let lsystem = new Lsystem(data);
 	lsystem.generate();
-<<<<<<< HEAD
-	drawCanvas(lsystem.result,data.angle);
-}
-
-
-
-=======
 	if(from === "canvas"){
 		drawCanvas(lsystem.result,data.angle);
 	}
@@ -182,4 +175,3 @@ function lsystemSetUp(from){
 		drawSvg(lsystem.result,data.angle);
 	}
 }
->>>>>>> 6f3523096556eb68855fb4bf3088ff8e363aac92
