@@ -66,6 +66,15 @@
 	width: 18em;
 }
 
+input {
+	font-size: 20px !important;
+	margin:0;
+	padding:0;
+	width: 300px !important;
+	height: 23px !important;
+}
+
+
 .container__menu--save-button {
 	margin: 1em;
 }
@@ -92,6 +101,10 @@
 .container__fractal-list--item {
 	background-color: #fff;
 	border: 1px solid black;
+}
+
+.container__fractal-list--item:hover {
+	cursor: pointer;
 }
 
 .container__fractal-list--uploadFractal {

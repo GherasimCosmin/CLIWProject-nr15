@@ -132,3 +132,6 @@ function lsystemSetUp(){
 	lsystem.generate();
 	drawCanvas(lsystem.result,data.angle);
 }
+
+
+
