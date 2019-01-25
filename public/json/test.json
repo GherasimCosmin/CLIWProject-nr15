@@ -1,0 +1,25 @@
+{
+	"axiom":"FG+-[",
+	"rules":[{
+				"predecessor":"F",
+				"successor":"FF"
+			},
+			{
+				"predecessor":"G",
+				"successor":"GG"
+			},
+			{
+				"predecessor":"+",
+				"successor":"++"
+			},
+			{
+				"predecessor":"-",
+				"successor":"--"
+			},
+			{
+				"predecessor":"[",
+				"successor":"[["
+			}],
+	"iterations":2,
+	"angle":10
+}

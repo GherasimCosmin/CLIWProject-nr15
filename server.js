@@ -38,7 +38,7 @@ app.get('/signIn', function(req, res) {
 				res.sendFile(__dirname+'/views/enterAsUser.html');
 			}
 			else{
-				res.end("Users not found!");
+				res.sendFile(__dirname+'/views/index.html');
 			}
 		});
 	});

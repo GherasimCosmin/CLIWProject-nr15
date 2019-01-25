@@ -6,41 +6,80 @@ let data={
 	axiom:"",
 	rules:[]
 };
-function getData(){
-	data.iterations = parseInt(document.getElementById("fIter").value);
-	data.angle = parseInt(document.getElementById("fAngl").value);
-	data.axiom = document.getElementById("fAxio").value;
-	let rules=[];
-	rules.push(document.getElementById("fRule1").value);
-	rules.push(document.getElementById("fRule2").value);
-	rules.push(document.getElementById("fRule3").value);
-	rules.push(document.getElementById("fRule4").value);
-	rules.push(document.getElementById("fRule5").value);
-	let posI,posF;
-	let before=true;
-	for(let i=0; i < rules.length ; i++){
-		let element={
-			predecessor:"",
-			successor:""
-		}
-		before=true;
-		for(let j=0; j< rules[i].length; j++){
-			if(rules[i][j]!==" "&&rules[i][j]!==">"){
-				if(before){
-					element.predecessor=element.predecessor+rules[i][j];
+function getData(from){
+	if(from === "canvas"){
+		data.iterations = parseInt(document.getElementById("fIter").value);
+		data.angle = parseInt(document.getElementById("fAngl").value);
+		data.axiom = document.getElementById("fAxio").value;
+		let rules=[];
+		rules.push(document.getElementById("fRule1").value);
+		rules.push(document.getElementById("fRule2").value);
+		rules.push(document.getElementById("fRule3").value);
+		rules.push(document.getElementById("fRule4").value);
+		rules.push(document.getElementById("fRule5").value);
+		let posI,posF;
+		let before=true;
+		for(let i=0; i < rules.length ; i++){
+			let element={
+				predecessor:"",
+				successor:""
+			}
+			before=true;
+			for(let j=0; j< rules[i].length; j++){
+				if(rules[i][j]!==" "&&rules[i][j]!==">"){
+					if(before){
+						element.predecessor=element.predecessor+rules[i][j];
+					}
+					else{
+						element.successor=element.successor+rules[i][j];
+					}
 				}
-				else{
-					element.successor=element.successor+rules[i][j];
+				else if(rules[i][j] ===">"){
+					before=false;
 				}
 			}
-			else if(rules[i][j] ===">"){
-				before=false;
+			if(element.predecessor !== "" && element.successor !==""){
+				data.rules.push(element);
 			}
+
 		}
-		if(element.predecessor !== "" && element.successor !==""){
-			data.rules.push(element);
+	}
+	if(from ==="Svg"){
+		data.iterations = parseInt(document.getElementById("fIterSvg").value);
+		data.angle = parseInt(document.getElementById("fAnglSvg").value);
+		data.axiom = document.getElementById("fAxioSvg").value;
+		let rules=[];
+		rules.push(document.getElementById("fRule1Svg").value);
+		rules.push(document.getElementById("fRule2Svg").value);
+		rules.push(document.getElementById("fRule3Svg").value);
+		rules.push(document.getElementById("fRule4Svg").value);
+		rules.push(document.getElementById("fRule5Svg").value);
+		let posI,posF;
+		let before=true;
+		for(let i=0; i < rules.length ; i++){
+			let element={
+				predecessor:"",
+				successor:""
+			}
+			before=true;
+			for(let j=0; j< rules[i].length; j++){
+				if(rules[i][j]!==" "&&rules[i][j]!==">"){
+					if(before){
+						element.predecessor=element.predecessor+rules[i][j];
+					}
+					else{
+						element.successor=element.successor+rules[i][j];
+					}
+				}
+				else if(rules[i][j] ===">"){
+					before=false;
+				}
+			}
+			if(element.predecessor !== "" && element.successor !==""){
+				data.rules.push(element);
+			}
+
 		}
-		
 	}
 }
 
@@ -123,15 +162,24 @@ class Lsystem {
 	}
 }
 
-function lsystemSetUp(){
-	getData();
+function lsystemSetUp(from){
+	getData(from);
 	// if(!axiomValidation(data.axiom)) return false;
 	// if(!rulesValidation(data.rules)) return false;
-
 	let lsystem = new Lsystem(data);
 	lsystem.generate();
+<<<<<<< HEAD
 	drawCanvas(lsystem.result,data.angle);
 }
 
 
 
+=======
+	if(from === "canvas"){
+		drawCanvas(lsystem.result,data.angle);
+	}
+	if(from ==="Svg"){
+		drawSvg(lsystem.result,data.angle);
+	}
+}
+>>>>>>> 6f3523096556eb68855fb4bf3088ff8e363aac92
