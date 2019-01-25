@@ -23,25 +23,25 @@ app.get("/editFractals/randomize",function(req,res){
 	res.send(data);
 });
 app.get('/signIn', function(req, res) {
-	let request = {
-		username:req.query.username,
-		password:req.query.password
-	};
-	con.connect(function(err) {
-		console.log("Connected!");
+	// let request = {
+	// 	username:req.query.username,
+	// 	password:req.query.password
+	// };
+	// con.connect(function(err) {
+	// 	console.log("Connected!");
 
-		var sql = "Select username,password from users where username='"
-		+request.username+"' and password='"+request.password+"';";
+	// 	var sql = "Select username,password from users where username='"
+	// 	+request.username+"' and password='"+request.password+"';";
 		
-		con.query(sql, function (err, result,fields) {
-			if(result.length > 0){
+	// 	con.query(sql, function (err, result,fields) {
+	// 		if(result.length > 0){
 				res.sendFile(__dirname+'/views/enterAsUser.html');
-			}
-			else{
-				res.sendFile(__dirname+'/views/index.html');
-			}
-		});
-	});
+	// 		}
+	// 		else{
+	// 			res.sendFile(__dirname+'/views/index.html');
+	// 		}
+	// 	});
+	// });
 });
 app.get('/signUp', function(req, res) {
 	res.sendFile(__dirname+'/views/signUp.html');
@@ -71,24 +71,24 @@ app.get('/index', function (req, res) {
 
 // sign up route
 app.get('/sign', function (req, res) {
-	let response = {
-		username:req.query.username,
-		password:req.query.password
-	};
-	con.connect(function(err) {
+	// let response = {
+	// 	username:req.query.username,
+	// 	password:req.query.password
+	// };
+	// con.connect(function(err) {
 		
-		if (err)
-			throw err;
-		console.log("Connected!");
+	// 	if (err)
+	// 		throw err;
+	// 	console.log("Connected!");
 		
-		var sql = "INSERT INTO users (username, password) VALUES ('"
-		+response.username+"', '"+response.password+"')";
+	// 	var sql = "INSERT INTO users (username, password) VALUES ('"
+	// 	+response.username+"', '"+response.password+"')";
 		
-		con.query(sql, function (err, result) {
-			if (err) throw err;
-			console.log("1 record inserted");
-		});
-	});
+	// 	con.query(sql, function (err, result) {
+	// 		if (err) throw err;
+	// 		console.log("1 record inserted");
+	// 	});
+	// });
 	res.sendFile(__dirname+'/views/enterAsUser.html');
 })
 
