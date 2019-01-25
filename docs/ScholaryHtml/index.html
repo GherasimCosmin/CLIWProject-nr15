@@ -127,18 +127,28 @@
 			things incredibly fast, without having to touch any code, until we achieved our version of the app. We had to take into consideration color combinations, font combinations,
 			color or font qualities, proportions and lots of other design principles.
 		</p>
-
-		<h3>Development</h3>
+		<h3>L-System fractal management</h3>
 		<p>
-			With the why, the how and the looks out of the way, all that was left for us to do was start coding. Until now, only the looks and implemented in code with none of the
-			functionality available, but our future plans include starting the work on the usability of our site.
+			Despite having the draw function as the most important part of the app, we needed the input table to generate a valid l-system for our application to use - and as such, a generator that uses the rules specified by the 
+			user was developed. THe L-Systems generated here can go up to 100 000 lines.
 		</p>
+		<h3>The Draw function</h3>
+		<p>
+			The first thing we wanted to do once we started working on I-Fractr was develop the draw function - the backbone functionality of our web application. Once the draw function is completed, we can start
+			implementing more and more features that are using it, such as preview, modify fractal or view our list. 
+		</p>
+		<h3>Other functionalities</h3>
+		<p>
+			With the 2 most important features out of the way, it was time for some quality of life changes. We added a sign-up/login, made the continue page functional,
+			the download page works as intended. In order to make these work, we used the localStorage feature. We used two arrays of fractals, one for our default list of fractals
+			and the other for the user's creations. When the user clicks on one to modify, the proper array is called and the proper fractal is shown on the canvas.
+		</p>
+		
 
 		<h3>Conclusion</h3>
 		<p>
-			We believe that the main take-away from our process until now is that it is not a done deal - we plan on going back and brainstorm again if the need arises,
-			we are sure that more planning will be needed once we start implementing our app's functionality and that it's very probable we'll have to make design changes to
-			accomodate whatever good or bad thing may appear in the future. And, of course, development will continue through it all.
+			We believe that the main take-away from this journey is that a project phase is never truly finished, you always find little changes you want to make along the way. This happened to us too,
+			and we started to go through each phase again and again, until we became content with our work. What we understood during this semester is that as the app evolves, so do we, as developers.	
 		</p>
 	</section>
 
@@ -147,15 +157,14 @@
 
 		<p>
 			For our app, we implemented a login functionality - which means of course that some credentials are needed. That is why our MySQL database has a table
-			dedicated to user credentials (username and password, declared as strings). Because we have a "Save as" and "Download" option, we need to save the user's fractals
-			in the database. Our plan is to save the fractal either as a SVG or a PNG on the server (based on the user's choice), then create a new entry inside the database with
-			the path to the newly saved fractal and the id of its creator.
+			dedicated to user credentials (username and password, declared as strings). The download and save functionalities were developed using the Local Storage and 
+			not the database, and will be detailed with the following step.
 		</p>
 
 		<p>
-			We also plan to apply the schema microdata (itemscope, itemtype & itemprop) on our app, so that it becomes easier for search engines to identify its purpose.
-			The itemtypes we believe are suitable for our project are ImageObject, Painting, VisualArtwork, WebPage and ImageGallery (and will be distributed appropriately throughout the website),
-			while the itemscope will be determined based on the content assigned to it.
+			We also applied the schema microdata (itemscope, itemtype & itemprop) on our app, so that it becomes easier for search engines to identify its purpose.
+			The itemtypes we found to be suitable for our project were ImageObject, Painting, VisualArtwork, WebPage and ImageGallery (and were distributed appropriately throughout the website),
+			while the itemscope was to be determined based on the content assigned to it.
 		</p>
 	</section>
 
@@ -163,10 +172,46 @@
 		<h2>Client-based Data Storage</h2>
 
 		<p>
-			Our plan right now is to have a Fractal singleton object available at all times, that is displayed everytime the user is using the canvas. What does this mean?
-			It means that the if the user edits the fractal, then the change is registered in this global singleton object. This way, if the user decides to access some other tab in our app
-			and then return to the Edit tab, he won't lose any progress he made on his work. If the singleton is empty, then a blank canvas is displayed.
+			We chose to store the fractals themselves on the client-side, by using the local storage. More precisely, we determined two arrays of fractals were needed - one filled by ourselves, 
+			the developers, and the other to be filled by the user. Our array, called "defaultFractals", holds all the fractals we wanted displayed in the "List" sections for the user to choose.
+			The other one, simply called "fractals", is more dynamic; it gets updated every time the user saves a fractal. Thus, when a fractal is clicked, the app checks to see in which array it 
+			should look for it, then takes it and displays it.
 		</p>
+		
+		<p>
+			The download functionality is also implemented using these two arrays; every array is filled with an "Fractal" object, which contains the rules, angles, iterations and, more importantly,
+			has an "image" property. Every time a new "Fractal" object is added, we also save the png image in the localStorage - and when the user clicks on Download, the PNG is delivered to him.
+		</p>
+	</section>
+
+	<section typeof="sa:Testing" id="testing">
+			<h2>Testing</h2>
+	
+			<p>
+				We tested our application thoroughly and, needless to say, have discovered plenty of bugs. We tested every functionality for errors and the design for visual bugs.
+				Some more interesting bugs we found were:
+			</p>
+			<ul>
+				<li>The "canvas" broke and became unusable everytime we tried to go over to the "SVG" section</li>
+				<li>The font-size on the input-boxes became abysmally small everytime you tried to write something in them; and 
+					changing it would update the size of the input box and disrupt the entire layout of the page  </li>
+				<li>Clicking on our fractals in the "list" functionality would display the user's fractals instead of the default ones in the canvas, OR clicking 
+					in the user's list would display the default fractals instead of the user's. A mess. </li>
+				<li>When shrinking the page all the way to mobile, the displayed fractals would become shockingly small.</li>
+				<li></li>
+			</ul>
+			<p>We went through most of our backlog of bugs and started fixing them one by one, in order to offer a functional website.</p>
+	</section>
+
+	<section typeof="sa:Practical use of our website" id="usage">
+			<h2>Practial use</h2>
+	
+			<p>The website's practicality comes from it's easiness to work with and update the PNG.</p>
+			
+			<p>As expected from a l-system application, the l-system assumes some prior knowledge of the user in regards to the way l-systems work.</p>
+			<p>The site offers the main functionality of viewing or playing around with fractals, and saving them after as PNG, to showcase wherever you need. It also
+				has a save function, to continue working at a later date, and a list of predefined, beautiful fractals to serve as inspiration.
+			</p>
 	</section>
 </body>
 
