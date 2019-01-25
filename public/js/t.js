@@ -1,0 +1,11 @@
+let ns = 'http://www.w3.org/2000/svg';
+var div = document.getElementById('drawing'); 
+var svg = document.createElementNS(ns, 'svg');
+svg.setAttributeNS(null, 'width', '100%');
+svg.setAttributeNS(null, 'height', '100%');
+svg.setAttribute("viewBox", "0 0 200 200"); 
+div.appendChild(svg);
+var newLine = document.createElementNS('http://www.w3.org/2000/svg','path');
+newLine.setAttribute('d',"M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z");
+newLine.setAttribute("stroke", "black");
+svg.appendChild(newLine);

@@ -26,7 +26,7 @@ window.onload = function(){
   position=slide[1];
   document.querySelector(".swiper__list").style.display="none";
   document.querySelector(".swiper__generate").style.display="block";
-  document.querySelector(".swiper__random").style.display="none";
+  document.querySelector(".swiper__generateSvg").style.display="none";
 
   window.addEventListener('touchstart', function(event){
    startX = event.touches[0].clientX;   
@@ -44,7 +44,7 @@ window.onload = function(){
     random.classList.remove('large');
     document.querySelector(".swiper__list").style.display="block";
     document.querySelector(".swiper__generate").style.display="none";
-    document.querySelector(".swiper__random").style.display="none";
+    document.querySelector(".swiper__generateSvg").style.display="none";
 
   });
   generate.addEventListener("click", function(){
@@ -53,7 +53,7 @@ window.onload = function(){
     random.classList.remove('large');
     document.querySelector(".swiper__list").style.display="none";
     document.querySelector(".swiper__generate").style.display="block";
-    document.querySelector(".swiper__random").style.display="none";
+    document.querySelector(".swiper__generateSvg").style.display="none";
 
   });
   random.addEventListener("click", function(){
@@ -62,7 +62,7 @@ window.onload = function(){
     generate.classList.remove('large');
     document.querySelector(".swiper__list").style.display="none";
     document.querySelector(".swiper__generate").style.display="none";
-    document.querySelector(".swiper__random").style.display="block";
+    document.querySelector(".swiper__generateSvg").style.display="block";
 
   });
 }
@@ -114,7 +114,7 @@ function left(){
 
   document.querySelector(".swiper__list").style.display="none";
   document.querySelector(".swiper__generate").style.display="none";
-  document.querySelector(".swiper__random").style.display="none";
+  document.querySelector(".swiper__generateSvg").style.display="none";
 
   document.querySelector(classToBe).style.display='block';
 }
@@ -133,7 +133,7 @@ function right(){
     random.classList.remove('large');
   }
   else if(position==slide[1]){
-    classToBe=".swiper__random";
+    classToBe=".swiper__generateSvg";
     position=slide[2];
 
     if(!random.classList.contains('large'))
@@ -144,7 +144,7 @@ function right(){
     generate.classList.remove('large');
   }
   else{
-    classToBe=".swiper__random";
+    classToBe=".swiper__generateSvg";
 
     if(!random.classList.contains('large'))
     {
@@ -156,7 +156,7 @@ function right(){
 
   document.querySelector(".swiper__list").style.display="none";
   document.querySelector(".swiper__generate").style.display="none";
-  document.querySelector(".swiper__random").style.display="none";
+  document.querySelector(".swiper__generateSvg").style.display="none";
 
   document.querySelector(classToBe).style.display='block';
 }

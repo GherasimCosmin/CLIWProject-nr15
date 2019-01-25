@@ -5,6 +5,7 @@ function setUp(lsystem,angle){
 	let canvas,drawobj;
 	canvas=document.getElementById("thecanvas");
 	drawobj = canvas.getContext("2d");
+	drawobj.clearRect(0, 0, canvas.width, canvas.height);
 	parseLSystem(lsystem,canvas,drawobj,angle);
 }
 

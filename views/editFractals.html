@@ -38,14 +38,15 @@
 		<div class="content-color">
 			<div class="container__menu">
 				<button class="container__menu--save-button disable" onclick="location.href='savefractals.html'">Save</button>
-				<canvas id="thecanvas" width="2000" height="2000"></canvas>
+				<!-- <canvas id="thecanvas" width="2000" height="2000"></canvas> -->
+				<div id="drawing"></div>
 			</div>
 
 			<div class="container__swiper">
 				<div class="container__menu__main ">
 					<button class="container__menu__list">List</button>
-					<button class="container__menu__generate">Generate</button>
-					<button class="container__menu__random">Random</button>
+					<button class="container__menu__generate">Generate Canvas</button>
+					<button class="container__menu__random">Generate Svg</button>
 				</div>
 
 				<div class="container__menu__swiper">
@@ -84,7 +85,7 @@
 							<label>Rule5</label>
 							<input id="fRule5" class="swiper__generate--text-input" type="text" name="rule5" value="">
 							<div class="swiper__generate__buttons">
-								<button onclick="lsystemSetUp()" class="swiper__generate--button">Generate</button>
+								<button onclick="lsystemSetUp('canvas')" from="canvas" class="swiper__generate--button">Generate</button>
 								<button class="swiper__generate--button">Save</button>
 							</div>
 							
@@ -101,10 +102,46 @@
 							<div class="container__fractal-list--uploadFractal"><p>Upload fractal...</p></div>
 						</div>
 					</div>
-					<div class="swiper__random">
-						<p>If you re sure about getting a random, click bellow.</p>
-						<p>But beware!<br>In doing so you'll lose all of your current work! </p>
-						<button onclick="test()" class="swiper__random--button">Randomize</button>
+					<div class="swiper__generateSvg">
+						<div class="swiper__generate--form">
+							<label>Iterations</label>
+							<div class="swiper__generate--special-label">
+								<input id="fIterSvg" class="swiper__generate--number-input" type="number" name="iterations" min="1" max="6" value="5">
+								<button class="swiper__generate--turn-up-button">
+									<span class="arrow-up"></span>
+								</button>
+								<button class="swiper__generate--turn-down-button">
+									<span class="arrow-down"></span>
+								</button>
+							</div>
+							<label>Angles</label>
+							<div class="swiper__generate--special-label">
+								<input id="fAnglSvg" class="swiper__generate--number-input" type="number" name="angles" min="0" max="360" value="25">
+								<button class="swiper__generate--turn-up-button">
+									<span class="arrow-up"></span>
+								</button>
+								<button class="swiper__generate--turn-down-button">
+									<span class="arrow-down"></span>
+								</button>
+							</div>
+							<label>Axiom</label>
+							<input id="fAxioSvg" class="swiper__generate--text-input" type="text" name="axiom" value="FX">
+							<label>Rule1</label>
+							<input id="fRule1Svg" class="swiper__generate--text-input" type="text" name="rule1" value="F>FF-[-F+F]+[+F-F]">
+							<label>Rule2</label>
+							<input id="fRule2Svg" class="swiper__generate--text-input" type="text" name="rule2" value="X>FF+[+F]+[-F]">
+							<label>Rule3</label>
+							<input id="fRule3Svg" class="swiper__generate--text-input" type="text" name="rule3" value="">
+							<label>Rule4</label>
+							<input id="fRule4Svg" class="swiper__generate--text-input" type="text" name="rule4" value="">
+							<label>Rule5</label>
+							<input id="fRule5Svg" class="swiper__generate--text-input" type="text" name="rule5" value="">
+							<div class="swiper__generate__buttons">
+								<button onclick="lsystemSetUp('Svg')" from="canvas" class="swiper__generate--button">Generate</button>
+								<button class="swiper__generate--button">Save</button>
+							</div>
+							
+						</div>
 					</div>
 				</div>
 			</div>
@@ -115,5 +152,6 @@
 	<script src="../js/test.js"></script>
 	<script src="../js/drawFractalsCanvas.js"></script>
 	<script src="../js/lsystem.js"></script>
+	<script src="../js/drawFractalsSvg.js"></script>
 </body>
 </html>
