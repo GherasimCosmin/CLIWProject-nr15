@@ -23,7 +23,6 @@ marginTopRandom =window.getComputedStyle(random).getPropertyValue('margin-top');
 
 
 window.onload = function(){
-  setup();
   position=slide[1];
   document.querySelector(".swiper__list").style.display="none";
   document.querySelector(".swiper__generate").style.display="block";
@@ -49,6 +48,8 @@ window.onload = function(){
 
   });
   generate.addEventListener("click", function(){
+    sessionStorage.setItem('fractalID', 999);
+    sessionStorage.setItem('defaultOrCustom', "custom");
     generate.classList.add('large');
     list.classList.remove('large');
     random.classList.remove('large');
@@ -192,30 +193,124 @@ function drawline(x,y,x2,y2){
   drawobj.stroke();
 }
 
+class Fractal {
+  constructor(iterations, angle, axiom, rule1, rule2, rule3, rule4, rule5) {
+    this.iterations = iterations || 0;
+    this.angle = angle || 0;
+    this.axiom = axiom || 0;
+    this.rule1 = rule1 || 0;
+    this.rule2 = rule2 || 0;
+    this.rule3 = rule3 || 0;
+    this.rule4 = rule4 || 0;
+    this.rule5 = rule5 || 0;
+  }
+
+  setImage(image) {
+    this.image = image;
+  }
+}
+
+const my_canvas = document.getElementById("thecanvas");
 const form = document.querySelector('form');
 const saveButton = document.getElementById('save__button');
-const iterations = document.getElementById('iterations');
-const angle = document.getElementById('angle');
-const axiom = document.getElementById('axiom');
-const rule_1 = document.getElementById('rule-1');
-const rule_2 = document.getElementById('rule-2');
-const rule_3 = document.getElementById('rule-3');
-const rule_4 = document.getElementById('rule-4');
-const rule_5 = document.getElementById('rule-5');
+const iterations = document.getElementById('fIter');
+const angle = document.getElementById('fAngl');
+const axiom = document.getElementById('fAxio');
+const rule_1 = document.getElementById('fRule1');
+const rule_2 = document.getElementById('fRule2');
+const rule_3 = document.getElementById('fRule3');
+const rule_4 = document.getElementById('fRule4');
+const rule_5 = document.getElementById('fRule5');
+
+trueIfFractalAlreadyExists = false;
+
+let fractals_array = JSON.parse(localStorage.getItem('fractals'));
+let defaultFractals_array = JSON.parse(localStorage.getItem('defaultFractals'));
 
 
 saveButton.addEventListener('click', function(e) {
   e.preventDefault();
+  sessionStorage.setItem("fractalID", 999);
+  sessionStorage.setItem("defaultOrCustom", "custom");
+  let fractal = new Fractal( iterations.value, angle.value, axiom.value, rule_1.value, rule_2.value, rule_3.value, rule_4.value, rule_5.value);
 
   let fractals_array = JSON.parse(localStorage.getItem('fractals'));
-  if(iterations.value) { fractals_array.push(iterations.value); }
-  if(angle.value) { fractals_array.push(angle.value); }
-  if(axiom.value) { fractals_array.push(axiom.value); }
-  if(rule_1.value) { fractals_array.push(rule_1.value); }
-  if(rule_2.value) { fractals_array.push(rule_2.value); }
-  if(rule_3.value) { fractals_array.push(rule_3.value); }
-  if(rule_4.value) { fractals_array.push(rule_4.value); }
-  console.log(fractals_array)
-  localStorage.setItem('fractals', JSON.stringify(fractals_array));
+  if (!fractals_array) {
+    fractals_array = [];
+  }
+
+  image = my_canvas.toDataURL("image/png");
+  fractal.setImage(image);
+
+  for (let i = 0; i < fractals_array.length; i++) {
+    if (JSON.stringify(fractal) === JSON.stringify(fractals_array[i])) {
+      trueIfFractalAlreadyExists = true;
+    }
+  }
+
+  if (!trueIfFractalAlreadyExists) {
+    fractals_array.push(fractal);
+    localStorage.setItem('fractals', JSON.stringify(fractals_array));  
+  }
+
   console.log(JSON.parse(localStorage.getItem('fractals')));
+  
+  
 });
+
+console.log(sessionStorage.getItem('fractalID'));
+
+if(sessionStorage.getItem("fractalID") < 999) {
+  console.log(sessionStorage.getItem("defaultOrCustom"));
+  if (sessionStorage.getItem("defaultOrCustom") === "custom") {
+    fractalToDisplay = fractals_array[sessionStorage.getItem("fractalID")];
+  
+    document.getElementById("fIter").setAttribute("value", fractalToDisplay.iterations);
+    document.getElementById("fAngl").setAttribute("value", fractalToDisplay.angle);
+    document.getElementById("fAxio").setAttribute("value", fractalToDisplay.axiom);
+    document.getElementById("fRule1").setAttribute("value", fractalToDisplay.rule1);
+    document.getElementById("fRule2").setAttribute("value", fractalToDisplay.rule2);
+    document.getElementById("fRule3").setAttribute("value", fractalToDisplay.rule3);
+    document.getElementById("fRule4").setAttribute("value", fractalToDisplay.rule4);
+    document.getElementById("fRule5").setAttribute("value", fractalToDisplay.rule5);
+  
+  } else {
+    fractalToDisplay = defaultFractals_array[sessionStorage.getItem("defaultFractalID")];
+  
+    document.getElementById("fIter").setAttribute("value", fractalToDisplay.iterations);
+    document.getElementById("fAngl").setAttribute("value", fractalToDisplay.angle);
+    document.getElementById("fAxio").setAttribute("value", fractalToDisplay.axiom);
+    document.getElementById("fRule1").setAttribute("value", fractalToDisplay.rule1);
+    document.getElementById("fRule2").setAttribute("value", fractalToDisplay.rule2);
+    document.getElementById("fRule3").setAttribute("value", fractalToDisplay.rule3);
+    document.getElementById("fRule4").setAttribute("value", fractalToDisplay.rule4);
+    document.getElementById("fRule5").setAttribute("value", fractalToDisplay.rule5);
+  
+  }
+}
+
+for(let i = 0; i < defaultFractals_array.length; i++) {
+    let defaultFractal = document.createElement("div");
+    defaultFractal.setAttribute("class", "container__fractal-list--item");
+    defaultFractal.setAttribute('id', 'defaultFractal-'+eval(i));
+    defaultFractal.onclick = function() {
+        sessionStorage.setItem('defaultFractalID', eval(i));
+        sessionStorage.setItem('defaultOrCustom', "default");
+    }
+
+    let linkToGenerate = document.createElement("a");
+    linkToGenerate.setAttribute("id", 'link-for-fractal-' + eval(i));
+    linkToGenerate.setAttribute("href", "/editFractals");
+
+    document.getElementById("fractal-list").appendChild(linkToGenerate);
+    document.getElementById("link-for-fractal-" + eval(i)).appendChild(defaultFractal);
+
+        
+    let img = document.createElement("img");
+    img.src = defaultFractals_array[i].image;
+    img.width = 100;
+    img.height = 100;
+    img.alt = "ceva";
+
+    document.getElementById("defaultFractal-"+eval(i)).appendChild(img);
+}

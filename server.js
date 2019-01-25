@@ -1,6 +1,7 @@
 
 let express = require("express");
 let mysql = require("mysql");
+let data = require("./public/json/test.json");
 let app = express();
 
 app.use(express.static(__dirname+'/public/'));
@@ -18,9 +19,29 @@ let con = mysql.createConnection({
 app.get('/', function(req, res) {
 	res.sendFile(__dirname+'/views/index.html');
 });
+app.get("/editFractals/randomize",function(req,res){
+	res.send(data);
+});
+app.get('/signIn', function(req, res) {
+	let request = {
+		username:req.query.username,
+		password:req.query.password
+	};
+	con.connect(function(err) {
+		console.log("Connected!");
 
-app.post('/signIn', function(req, res) {
-	res.sendFile(__dirname+'/views/enterAsUser.html');
+		var sql = "Select username,password from users where username='"
+		+request.username+"' and password='"+request.password+"';";
+		
+		con.query(sql, function (err, result,fields) {
+			if(result.length > 0){
+				res.sendFile(__dirname+'/views/enterAsUser.html');
+			}
+			else{
+				res.end("Users not found!");
+			}
+		});
+	});
 });
 app.get('/signUp', function(req, res) {
 	res.sendFile(__dirname+'/views/signUp.html');
@@ -50,7 +71,7 @@ app.get('/index', function (req, res) {
 
 // sign up route
 app.get('/sign', function (req, res) {
-	response = {
+	let response = {
 		username:req.query.username,
 		password:req.query.password
 	};
@@ -68,21 +89,9 @@ app.get('/sign', function (req, res) {
 			console.log("1 record inserted");
 		});
 	});
-	console.log(response.username+" "+response.password);
-	res.end(response.username+" "+response.password);
+	res.sendFile(__dirname+'/views/enterAsUser.html');
 })
 
-// This responds a POST request for the homepage
-app.post('/index', function (req, res) {
-	console.log("Got a POST request for the homepage");
-	res.send('Hello POST');
-})
-
-// This responds a GET request for the /list_user page.
-app.get('/list_user', function (req, res) {
-	console.log("Got a GET request for /list_user");
-	res.send('Page Listing');
-})
 
 var server = app.listen(8085, function () {
 	var host = server.address().address

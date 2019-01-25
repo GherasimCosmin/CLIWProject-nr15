@@ -1,6 +1,49 @@
 
 let alphabet = ["F" ,"G", "+", "-", "[", "]"];
-let data = require("../json/test.json");
+let data={
+	iterations:0,
+	angle:0,
+	axiom:"",
+	rules:[]
+};
+function getData(){
+	data.iterations = parseInt(document.getElementById("fIter").value);
+	data.angle = parseInt(document.getElementById("fAngl").value);
+	data.axiom = document.getElementById("fAxio").value;
+	let rules=[];
+	rules.push(document.getElementById("fRule1").value);
+	rules.push(document.getElementById("fRule2").value);
+	rules.push(document.getElementById("fRule3").value);
+	rules.push(document.getElementById("fRule4").value);
+	rules.push(document.getElementById("fRule5").value);
+	let posI,posF;
+	let before=true;
+	for(let i=0; i < rules.length ; i++){
+		let element={
+			predecessor:"",
+			successor:""
+		}
+		before=true;
+		for(let j=0; j< rules[i].length; j++){
+			if(rules[i][j]!==" "&&rules[i][j]!==">"){
+				if(before){
+					element.predecessor=element.predecessor+rules[i][j];
+				}
+				else{
+					element.successor=element.successor+rules[i][j];
+				}
+			}
+			else if(rules[i][j] ===">"){
+				before=false;
+			}
+		}
+		if(element.predecessor !== "" && element.successor !==""){
+			data.rules.push(element);
+		}
+		
+	}
+}
+
 //accepts a string returns a boolean
 function axiomValidation(axiom){
 	if(typeof axiom != "string"){
@@ -68,19 +111,24 @@ class Lsystem {
 					if(this.axiom[axiomIndex] === this.rules[ruleIndex].predecessor){
 						this.result = this.result + this.rules[ruleIndex].successor;
 					}
+					else{
+						this.result = this.result + this.axiom[axiomIndex];
+					}
 				}
 			}
 			this.axiom = this.result;
+			this.result = "";
 		}
+		this.result = this.axiom 
 	}
 }
 
-function lsystemSetUp(data){
-	if(!axiomValidation(data.axiom)) return false;
-	if(!rulesValidation(data.rules)) return false;
+function lsystemSetUp(){
+	getData();
+	// if(!axiomValidation(data.axiom)) return false;
+	// if(!rulesValidation(data.rules)) return false;
 
 	let lsystem = new Lsystem(data);
 	lsystem.generate();
-	console.log(lsystem);
+	drawCanvas(lsystem.result,data.angle);
 }
-lsystemSetUp(data);
