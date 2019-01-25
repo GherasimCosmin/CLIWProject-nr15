@@ -231,7 +231,8 @@ trueIfFractalAlreadyExists = false;
 
 let fractals_array = JSON.parse(localStorage.getItem('fractals'));
 let defaultFractals_array = JSON.parse(localStorage.getItem('defaultFractals'));
-
+console.log(defaultFractals_array);
+console.log(fractals_array);
 
 saveButton.addEventListener('click', function(e) {
   e.preventDefault();
@@ -239,23 +240,25 @@ saveButton.addEventListener('click', function(e) {
   sessionStorage.setItem("defaultOrCustom", "custom");
   let fractal = new Fractal( iterations.value, angle.value, axiom.value, rule_1.value, rule_2.value, rule_3.value, rule_4.value, rule_5.value);
 
-  let defaultFractals_array = JSON.parse(localStorage.getItem('defaultFractals'));
-  if (!defaultFractals_array) {
-    defaultFractals_array = [];
+  if (!fractals_array) {
+    fractals_array  = [];
   }
 
   image = my_canvas.toDataURL("image/png");
   fractal.setImage(image);
 
-  for (let i = 0; i < defaultFractals_array.length; i++) {
-    if (JSON.stringify(fractal) === JSON.stringify(defaultFractals_array[i])) {
+  for (let i = 0; i < fractals_array .length; i++) {
+    if (JSON.stringify(fractal) === JSON.stringify(fractals_array[i])) {
       trueIfFractalAlreadyExists = true;
     }
   }
 
   if (!trueIfFractalAlreadyExists) {
-    defaultFractals_array.push(fractal);
-    localStorage.setItem('fractals', JSON.stringify(defaultFractals_array));  
+    fractals_array .push(fractal);
+    console.log(fractals_array );
+    localStorage.setItem('fractals', JSON.stringify(fractals_array));
+        console.log(fractals_array );
+  
   }
 
   console.log(JSON.parse(localStorage.getItem('fractals')));
