@@ -1,38 +1,19 @@
 let ns = 'http://www.w3.org/2000/svg'
-// var div = document.getElementById('drawing') 
-// var svg = document.createElementNS(ns, 'svg')
-// svg.setAttributeNS(null, 'width', '100%')
-// svg.setAttributeNS(null, 'height', '100%')
-// div.appendChild(svg)
-// var rect = document.createElementNS(ns, 'rect')
-// rect.setAttributeNS(null, 'width', 100)
-// rect.setAttributeNS(null, 'height', 100)
-// rect.setAttributeNS(null, 'fill', '#f06')
-// svg.appendChild(rect)
-// var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
-// newLine.setAttribute('id','line2');
-//     newLine.setAttribute('x1','0');
-//     newLine.setAttribute('y1','0');
-//     newLine.setAttribute('x2','300');
-//     newLine.setAttribute('y2','300');
-//     newLine.setAttribute("stroke", "black")
-//     svg.appendChild(newLine)
-drawSvg("FF-[-F+F]+[+F-F]FFF-[-F+F]+[+F-F]F--[[--FF-[-F+F]+[+F-F]F++FF-[-F+F]+[+F-F]F]]",25);
 function drawSvg(lsystem,angle){
-	setUp(lsystem,angle);
+	setUpSvg(lsystem,angle);
 };
-function setUp(lsystem,angle){
+function setUpSvg(lsystem,angle){
 	var div = document.getElementById('drawing');
 	var svg = document.createElementNS(ns, 'svg');
 	svg.setAttribute("viewBox", "0 0 500 500"); 
 	svg.setAttributeNS(null, 'width', '100%')
 	svg.setAttributeNS(null, 'height', '100%')
 	div.appendChild(svg);
-	parseLSystem(lsystem,svg,angle);
+	parseLSystemSvg(lsystem,svg,angle);
 }
 
 //drawing logic
-function parseLSystem(lsystem,svg,angle){
+function parseLSystemSvg(lsystem,svg,angle){
 	let start={x:50,y:50};
 	console.log(lsystem);
 	let currentState={
@@ -81,7 +62,6 @@ function parseLSystem(lsystem,svg,angle){
 			path.setAttribute("stroke", "black");
 			svg.appendChild(path);
 			result="";
-			result= result + " M "+currentState.currentPoz.x+","+currentState.currentPoz.y;
 			break;
 			default :
 			currentState.currentPoz.x = currentState.currentPoz.x + len *Math.cos(Math.PI * currentState.theta / 180.0);

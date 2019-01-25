@@ -19,13 +19,13 @@
 	<link rel="stylesheet" type="text/css" href="../css/mobile-responsive.css">
 	<link rel="stylesheet" type="text/css" href="../css/desktop-responsive.css">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/SoftwareApplication">
 	<header>
 		<h1>I-Fractr</h1>
 		<hr>
 	</header>
-	<main class="container">
-		<form class="container__menu" action="/sign" method="GET">
+	<main class="container" itemscope itemtype="http://schema.org/WebApplication">
+		<form class="container__menu" action="/sign" method="GET" itemscope itemtype="http://schema.org/DrawAction">
 			<input class="container__menu--input" type="text" name="username" placeholder="Username" required="required">
 			<input class="container__menu--input" type="password" name="password" placeholder="Password" required="required">
 			<input class="container__menu--submit" type="submit" name="submit" value="Sign Up">

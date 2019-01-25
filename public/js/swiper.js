@@ -27,6 +27,7 @@ window.onload = function(){
   document.querySelector(".swiper__list").style.display="none";
   document.querySelector(".swiper__generate").style.display="block";
   document.querySelector(".swiper__generateSvg").style.display="none";
+  document.querySelector(".container__svg").style.display="none";
 
   window.addEventListener('touchstart', function(event){
    startX = event.touches[0].clientX;   
@@ -45,6 +46,8 @@ window.onload = function(){
     document.querySelector(".swiper__list").style.display="block";
     document.querySelector(".swiper__generate").style.display="none";
     document.querySelector(".swiper__generateSvg").style.display="none";
+    document.querySelector(".container__svg").style.display="none";
+    document.querySelector(".container__canvas").style.display="block";
 
   });
   generate.addEventListener("click", function(){
@@ -56,7 +59,8 @@ window.onload = function(){
     document.querySelector(".swiper__list").style.display="none";
     document.querySelector(".swiper__generate").style.display="block";
     document.querySelector(".swiper__generateSvg").style.display="none";
-
+    document.querySelector(".container__svg").style.display="none";
+    document.querySelector(".container__canvas").style.display="block";
   });
   random.addEventListener("click", function(){
     random.classList.add('large');
@@ -65,7 +69,8 @@ window.onload = function(){
     document.querySelector(".swiper__list").style.display="none";
     document.querySelector(".swiper__generate").style.display="none";
     document.querySelector(".swiper__generateSvg").style.display="block";
-
+    document.querySelector(".container__svg").style.display="block";
+    document.querySelector(".container__canvas").style.display="none";
   });
 }
 
@@ -234,23 +239,23 @@ saveButton.addEventListener('click', function(e) {
   sessionStorage.setItem("defaultOrCustom", "custom");
   let fractal = new Fractal( iterations.value, angle.value, axiom.value, rule_1.value, rule_2.value, rule_3.value, rule_4.value, rule_5.value);
 
-  let fractals_array = JSON.parse(localStorage.getItem('fractals'));
-  if (!fractals_array) {
-    fractals_array = [];
+  let defaultFractals_array = JSON.parse(localStorage.getItem('defaultFractals'));
+  if (!defaultFractals_array) {
+    defaultFractals_array = [];
   }
 
   image = my_canvas.toDataURL("image/png");
   fractal.setImage(image);
 
-  for (let i = 0; i < fractals_array.length; i++) {
-    if (JSON.stringify(fractal) === JSON.stringify(fractals_array[i])) {
+  for (let i = 0; i < defaultFractals_array.length; i++) {
+    if (JSON.stringify(fractal) === JSON.stringify(defaultFractals_array[i])) {
       trueIfFractalAlreadyExists = true;
     }
   }
 
   if (!trueIfFractalAlreadyExists) {
-    fractals_array.push(fractal);
-    localStorage.setItem('fractals', JSON.stringify(fractals_array));  
+    defaultFractals_array.push(fractal);
+    localStorage.setItem('fractals', JSON.stringify(defaultFractals_array));  
   }
 
   console.log(JSON.parse(localStorage.getItem('fractals')));

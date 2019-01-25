@@ -20,20 +20,20 @@
     <link rel="stylesheet" type="text/css" href="../css/mobile-responsive.css">
     <link rel="stylesheet" type="text/css" href="../css/desktop-responsive.css">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/WebApplication">
 	<header>
 		<h1>I-Fractr</h1>
 		<hr>
 	</header>
-	<main class="container">
+	<main class="container" itemscope itemtype="http://schema.org/SoftwareApplication">
         <h2 class="container--title">Welcome!</h2>
         <p id ="spanu" class="container--notFound"></p>
-        <form class="container__menu" action="signIn" method="get">
+        <form class="container__menu" action="signIn" method="get" itemscope itemtype="http://schema.org/DrawAction">
             <input class="container__menu--input" type="text" name="username" placeholder="Username" required="required">
             <input class="container__menu--input" type="password" name="password" placeholder="Password" required="required">
             <input class="container__menu--submit" type="submit" name="submit" value="Log In">
         </form>
-        <div class="container--text">
+        <div class="container--text" itemscope itemtype="http://schema.org/CreateAction">
             <p>New here? Sign up or try it as a guest!</p>
             <span>
                 <a class="container--text__button" href="signUp">SignUp!</a>
